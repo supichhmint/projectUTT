@@ -1,4 +1,6 @@
-@extends('layouts.headlogo') @section('title', 'Page Title') @section('content')
+@extends('layouts.headlogo') 
+@section('title', 'Page Title') 
+@section('content')
 <div class="container">
     <header2>
         <h2>Add Trip</h2>
