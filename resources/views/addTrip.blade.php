@@ -88,6 +88,7 @@
                                     <label>วันเริ่มเดินทาง</label>
                                     <input class="form-control start_day" name="start_date[]" type="date" oninvalid="this.setCustomValidity('กรุณากรอกวันเริ่มเดินทาง')"
                                         oninput="setCustomValidity('')" placeholder="วันเริ่มเดินทาง" onChange="myStartdate()">
+                                        
                                 </div>
                                 <div class="col-md-3">
                                     <label>วันสิ้นสุดการเดินทาง</label>

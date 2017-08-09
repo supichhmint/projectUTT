@@ -1,4 +1,6 @@
- <?php $__env->startSection('title', 'Page Title'); ?> <?php $__env->startSection('content'); ?>
+ 
+<?php $__env->startSection('title', 'Page Title'); ?> 
+<?php $__env->startSection('content'); ?>
 <div class="container">
     <header2>
         <h2>Add Trip</h2>
@@ -86,6 +88,7 @@
                                     <label>วันเริ่มเดินทาง</label>
                                     <input class="form-control start_day" name="start_date[]" type="date" oninvalid="this.setCustomValidity('กรุณากรอกวันเริ่มเดินทาง')"
                                         oninput="setCustomValidity('')" placeholder="วันเริ่มเดินทาง" onChange="myStartdate()">
+                                        
                                 </div>
                                 <div class="col-md-3">
                                     <label>วันสิ้นสุดการเดินทาง</label>

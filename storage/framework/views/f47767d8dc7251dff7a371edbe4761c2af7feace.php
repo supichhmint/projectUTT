@@ -1,4 +1,4 @@
-@extends('layouts.headindex') @section('title', 'log in') @section('content')
+ <?php $__env->startSection('title', 'log in'); ?> <?php $__env->startSection('content'); ?>
 
 <head>
   <link href="css/login.css" rel="stylesheet">
@@ -274,8 +274,9 @@
         $(elem).prev().find('a[data-toggle="tab"]').click();
     }
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
 
 </body>
 
 </html>
+<?php echo $__env->make('layouts.headindex', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
