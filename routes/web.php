@@ -58,7 +58,7 @@ Route::resource('/trip','tripController');
 Route::post('/addtripround','addtriproundController@store');
 Route::resource('/completetrip','comptelttripController');
 Route::resource('/edittrip','addtripController');
-
+Route::resource('/profileuser','RegisuserController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -84,9 +84,9 @@ Route::get('/loginas',function(){
 Route::get('/logintourist',function(){
 	return view ('logintourist');
 });
-Route::get('/profileuser',function(){
-	return view ('profile_user');
-});
+// Route::get('/profileuser',function(){
+// 	return view ('profile_user');
+// });
 Route::get('/profileagency',function(){
 	return view ('profile_user');
 });

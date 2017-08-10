@@ -44,7 +44,7 @@
                     </li>
                 </ul>
             </div>
-            <form role="form" action="/profileagency" method="POST" name="id">
+            <form role="form" action="/profileuser" method="POST" name="id">
                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                 <div class="tab-content">
                     <div class="tab-pane active" role="tabpanel" id="step1">
@@ -72,7 +72,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for="exampleInputEmail1">รหัสผ่าน</label>
-                                    <input type="text" class="form-control" name="	password" id="password" placeholder="กรุณากรอกอีเมลล์เพื่อยืนยันอีกครั้ง" >
+                                    <input type="password" class="form-control" name="password" id="password" placeholder="รหัสผ่าน" >
                                 </div>
                             </div>
                         </div>
