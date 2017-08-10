@@ -53,25 +53,26 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="exampleInputEmail1">ชื่อจริง</label>
-                                    <input type="text" class="form-control" name="firstname" id="firstname" placeholder="ชื่อจริง" onChange="myfirstname()">
+                                    <input type="text" class="form-control" name="firstname" id="firstname" placeholder="ชื่อจริง" onChange="myFirstname()">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="exampleInputEmail1">นามสกุล</label>
-                                    <input type="text" class="form-control" name="lastname" id="	lastname" placeholder="นามสกุล" onChange="mylastname()">
+                                    <input type="text" class="form-control" name="lastname" id="lastname" placeholder="นามสกุล" onChange="myLastname()">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="exampleInputEmail1">เพศ</label>
-                                    <input type="radio" name="gender" value="male"> Male
-                                    <input type="radio" name="gender" value="female"> Female
-                                    <!-- <input type="text" class="form-control" name="	lastname" id="	lastname" placeholder="Day(s)" onChange="mylastname()"> -->
+                                   <select id="gender" name="gender" onchange="myGender()">
+                                        <option value="ชาย">ชาย
+                                        <option value="หญิง">หญิง
+                                        </select>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="exampleInputEmail1">อีเมลล์</label>
-                                    <input type="text" class="form-control" name="lastn" id="ln" placeholder="อีเมลล์">
+                                    <input type="text" class="form-control" name="email" id="email" placeholder="อีเมลล์" onChange="myEmail()">
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="exampleInputEmail1">กรุณากรอกอีเมลล์เพื่อยืนยันอีกครั้ง</label>
-                                    <input type="text" class="form-control" name="	password" id="password" placeholder="กรุณากรอกอีเมลล์เพื่อยืนยันอีกครั้ง" onChange="myPassword()">
+                                    <label for="exampleInputEmail1">รหัสผ่าน</label>
+                                    <input type="text" class="form-control" name="	password" id="password" placeholder="กรุณากรอกอีเมลล์เพื่อยืนยันอีกครั้ง" >
                                 </div>
                             </div>
                         </div>
@@ -85,28 +86,35 @@
                             <div class="row" id='controls'>
                                 <div class="col-md-6">
                                     <label>รหัสประชาชน</label>
-                                    <input class="form-control start_day" name="nationnal_id" type="text" oninvalid="this.setCustomValidity('กรุณากรอกวันเริ่มเดินทาง')"
-                                        oninput="setCustomValidity('')" placeholder="รหัสประชาชน" onChange="myNationnal()">
-                                        
+                                    <input class="form-control start_day" name="nationnal_id" type="text" 
+                                         id="nationnal" oninvalid="this.setCustomValidity('กรุณากรอกวันเริ่มเดินทาง')"
+                                        oninput="setCustomValidity('')" placeholder="รหัสประชาชน" onChange="myNationnal()"> 
+                                </div>
+                                <div class="col-md-6">
+                                    <label>วันเกิด</label>
+                                    <input class="form-control start_day" name="birthday" id="birthday" type="text" 
+                                         id="nationnal" oninvalid="this.setCustomValidity('กรุณากรอกวันเริ่มเดินทาง')"
+                                        oninput="setCustomValidity('')" placeholder="รหัสประชาชน" onChange="myBirthday()"> 
                                 </div>
                                 <div class="col-md-6">
                                     <label>ที่อยู่</label>
-                                    <input class="form-control Departure_Date" name="address" type="text" oninvalid="this.setCustomValidity('กรุณากรอกวันสิ้นสุดการเดินทาง')"
+                                    <input class="form-control Departure_Date" name="address" id="address" type="text" oninvalid="this.setCustomValidity('กรุณากรอกวันสิ้นสุดการเดินทาง')"
                                         oninput="setCustomValidity('')" placeholder="ที่อยู่" onChange="myAddress()">
                                 </div>
+                                <br>
                                 <div class="col-md-3">
                                     <label>จังหวัด</label>
-                                    <input class="form-control Departure_Date" name="country" type="text" oninvalid="this.setCustomValidity('กรุณากรอกวันสิ้นสุดการเดินทาง')"
-                                        oninput="setCustomValidity('')" placeholder="วันสิ้นสุดการเดินทาง" onChange="myCountry()">
+                                    <input class="form-control Departure_Date" name="country" id="country" type="text" oninvalid="this.setCustomValidity('กรุณากรอกจังหวัด)"
+                                        oninput="setCustomValidity('')" placeholder="จังหวัด" onChange="myCountry()">
                                 </div>
                                 <div class="col-md-3">
                                     <label>รหัสไปรษณีย์</label>
-                                    <input class="form-control Departure_Date" name="zipcode" type="text" oninvalid="this.setCustomValidity('กรุณากรอกวันสิ้นสุดการเดินทาง')"
+                                    <input class="form-control Departure_Date" name="zipcode" id="zipcode" type="text" oninvalid="this.setCustomValidity('กรุณากรอกวันสิ้นสุดการเดินทาง')"
                                         oninput="setCustomValidity('')" placeholder="วันสิ้นสุดการเดินทาง" onChange="myZipcode()">
                                 </div>
                                 <div class="col-md-3">
                                     <label>เบอร์โทรศัพท์</label>
-                                    <input class="form-control Departure_Date" name="phone" type="text" oninvalid="this.setCustomValidity('กรุณากรอกวันสิ้นสุดการเดินทาง')"
+                                    <input class="form-control Departure_Date" name="phone" id="phone" type="text" oninvalid="this.setCustomValidity('กรุณากรอกวันสิ้นสุดการเดินทาง')"
                                         oninput="setCustomValidity('')" placeholder="เบอร์โทรศัพท์" onChange="myPhone()">
                                 </div>
                             </div>
@@ -124,41 +132,49 @@
 
                         <hr>
                         <div class="row" >
-                            <div class="col-md-2">
+                            <div class="col-md-5">
                                 <label>ชื่อจริง</label>
 
-                                <p id="startdate"></p>
+                                <p id="firstn"></p>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-5">
                                 <label>นามสกุล</label>
-
-                                <p id="depdate"></p>
+                                <p id="lastn"></p>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-5">
+                                <label>เพศ</label>
+                                <p id="gen"></p>
+                            </div>
+                            <div class="col-md-5">
                                 <label>อีเมลล์</label>
 
-                                <p id="pchild"></p>
+                                <p id="mail"></p>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-5">
                                 <label>รหัสประชาชน</label>
 
-                                <p id="padult"></p>
+                                <p id="nation"></p>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-5">
+                                <label>วันเกิด</label>
+                                <p id="birth"></p>
+                            </div>
+                            <div class="col-md-5">
                                 <label>ที่อยู่</label>
-                                <p id="aseat"></p>
+                                <p id="adr"></p>
                             </div>
-                            <div class="col-md-2">
+                            <br>
+                            <div class="col-md-5">
                                 <label>จังหวัด</label>
-                                <p id="aseat"></p>
+                                <p id="coun"></p>
                             </div>
-                            <div class="col-md-2">
-                                <label>รหัสนักศึกษา</label>
-                                <p id="aseat"></p>
+                            <div class="col-md-5">
+                                <label>รหัสไปรษณีย์</label>
+                                <p id="zip"></p>
                             </div>
                             <div class="col-md-2">
                                 <label>เบอร์โทรศัพท์</label>
-                                <p id="aseat"></p>
+                                <p id="phonen"></p>
                             </div>
                         </div>
                         
@@ -273,7 +289,52 @@
     function prevTab(elem) {
         $(elem).prev().find('a[data-toggle="tab"]').click();
     }
+     function myFirstname() {
+        var fn = document.getElementById("firstname").value;
+        document.getElementById('firstn').innerHTML = fn;
+    }
+    function myLastname() {
+        var ln = document.getElementById("lastname").value;
+        document.getElementById('lastn').innerHTML = ln;
+    }
+    function myGender() {
+        var fn = document.getElementById("gender").value;
+        document.getElementById('gen').innerHTML = fn;
+    }
+    function myEmail() {
+        var fn = document.getElementById("email").value;
+        document.getElementById('mail').innerHTML = fn;
+    }
+    function myNationnal() {
+        var fn = document.getElementById("nationnal").value;
+        document.getElementById('nation').innerHTML = fn;
+    }
+    function myAddress() {
+        var fn = document.getElementById("address").value;
+        document.getElementById('adr').innerHTML = fn;
+    }
+    function myCountry() {
+        var fn = document.getElementById("country").value;
+        document.getElementById('coun').innerHTML = fn;
+    }
+    function myZipcode() {
+        var fn = document.getElementById("zipcode").value;
+        document.getElementById('zip').innerHTML = fn;
+    }
+    function myPhone() {
+        var fn = document.getElementById("phone").value;
+        document.getElementById('phonen').innerHTML = fn;
+    }
+    function myBirthday() {
+        var fn = document.getElementById("birthday").value;
+        document.getElementById('birth').innerHTML = fn;
+    }
+
 </script>
+
+
+
+
 @endsection
 
 </body>
