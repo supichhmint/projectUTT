@@ -1,22 +1,10 @@
-@extends('layouts.headindex') @section('title', 'log in') 
+@extends('layouts.headindex') @section('title', 'log in') @section('content')
 
-@section('content')
-
-<head>
-  <link href="css/login.css" rel="stylesheet">
-</head>
-
-
-
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 <body>
   <div class="container">
     <!-- LOGIN FORM -->
-    <div class="text-center" style="padding:200px 0">
+    <div class="text-center" style="padding:100px 0">
       <div class="logo">Who are you?</div>
       <!-- Main Form -->
       <div class="login-form-1">

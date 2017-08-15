@@ -1,5 +1,5 @@
  
-<?php $__env->startSection('title', 'Page Title'); ?> 
+<?php $__env->startSection('title', 'Add Trip'); ?> 
 <?php $__env->startSection('content'); ?>
 <div class="container">
     <header2>

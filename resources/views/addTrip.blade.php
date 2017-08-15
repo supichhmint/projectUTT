@@ -1,5 +1,5 @@
 @extends('layouts.headlogo') 
-@section('title', 'Page Title') 
+@section('title', 'Add Trip') 
 @section('content')
 <div class="container">
     <header2>

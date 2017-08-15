@@ -241,6 +241,7 @@
 					</div>
 					<div class="form-group row">
 						<label class="col-md-3 control-label" for="list_address">ที่อยู่</label>
+						
 						<div class="col-md-9" id="part_address">
 							<div class="portlet light bg-inverse">
 								<div class="portlet-title">
@@ -807,7 +808,7 @@
 	<!-- <script src="/_member/assets/js/facebookapi.js" type="text/javascript"></script>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src="https://apis.google.com/js/api:client.js"></script>
-<script src="/_member/assets/js/googleuserapi.js" type="text/javascript"></script> 
+<script src="/_member/assets/js/googleuserapi.js" type="text/javascript"></script>
 		<script src="js/profile_setting/app.min.js" type="text/javascript"></script>-->
 
 	<script src="js/profile_setting/setting.js" type="text/javascript"></script>
@@ -816,6 +817,37 @@
 	<script src="js/profile_setting/setting-address.js" type="text/javascript"></script>
 	<script src="js/profile_setting/setting-cc.js" type="text/javascript"></script>
 	<script src="js/profile_setting/setting-pax.js" type="text/javascript"></script>
+
+	<script type="text/javascript" src="js/jquery.stellar.min.js"></script>
+	<script>
+	enableChaser = 0;
+	</script>
+	<script type="text/javascript">
+		// $('.global-map-area').addClass('hidden');
+        function changeLang(lang){
+            var url = window.location.href;
+            var curr_lang_pos = url.lastIndexOf('/') + 1;
+            // var curr_lang = url.substring(curr_lang_pos);
+            var url_hash = '';
+            if( (url.indexOf('#') > -1) ){
+                url_hash = url.split('#');
+                url = url_hash[0];
+                url_hash = url_hash[1];
+            }
+            url = url.substring(0,curr_lang_pos)+lang;
+            // if( (url.indexOf('locale') > -1) ){
+                // var curr_lang = (lang=='th')?'en':'th';
+                // url = url.replace('='+curr_lang,'='+lang);
+            // }else{
+                // if( (url.indexOf('?') > -1) ){
+                    // url = url+'&locale='+lang;
+                // }else{
+                    // url = url+'?locale='+lang;
+                // }
+            // }
+            window.location = (url_hash=='')?url:url+'#'+url_hash;
+        }
+    </script>
 </div>
 
 <?php $__env->stopSection(); ?>

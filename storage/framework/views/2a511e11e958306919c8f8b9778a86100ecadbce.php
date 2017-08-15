@@ -1,6 +1,4 @@
- <?php $__env->startSection('title', 'log in'); ?> 
-
-<?php $__env->startSection('content'); ?>
+ <?php $__env->startSection('title', 'log in'); ?> <?php $__env->startSection('content'); ?>
 
 <head>
   <link href="css/login.css" rel="stylesheet">
@@ -16,7 +14,7 @@
 <body>
   <div class="container">
     <!-- LOGIN FORM -->
-    <div class="text-center" style="padding:200px 0">
+    <div class="text-center" style="padding:100px 0">
       <div class="logo">Who are you?</div>
       <!-- Main Form -->
       <div class="login-form-1">

@@ -23,8 +23,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		}
 	</script>
 	<!-- Custom Theme files -->
-	<link href="css/bootstrap2.css" type="text/css" rel="stylesheet" media="all">
-	<link href="css/profile/style.css" type="text/css" rel="stylesheet" media="all">
+	<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+	<link href="css/style.css" type="text/css" rel="stylesheet" media="all">
 	<link rel="stylesheet" href="css/swipebox.css">    
 	<link rel="stylesheet" href="css/ziehharmonika.css">
 	<!-- //Custom Theme files -->

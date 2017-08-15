@@ -21,17 +21,22 @@ body a {
 }
 
 h1,
+h5 {
+    margin: 0;
+    font-family: 'Bad Script', Prompt;
+}
+
 h2,
 h3,
 h4,
-h5,
 h6 {
     margin: 0;
-    font-family: 'Bad Script', cursive;
+    font-family: 'Prompt', sans-serif;
 }
 
 p {
     margin: 0;
+    font-family: 'Prompt', sans-serif;
 }
 
 ul,
@@ -258,12 +263,18 @@ body a:hover {
     text-align: center;
 }
 
-.banner-w3lstext h2,
+.banner-w3lstext h2 {
+    font-size: 4em;
+    color: #fff;
+    text-align: center;
+    font-family: 'Bad Script';
+}
+
 .banner-w3lstext h3 {
     font-size: 3em;
     color: #fff;
     text-align: center;
-    font-family: 'Bad Script', cursive;
+    font-family: 'Prompt';
 }
 
 .banner-w3lstext p {
@@ -285,7 +296,7 @@ body a:hover {
 .slid,
 .newsletter,
 .codes {
-    padding: 5em 0;
+    padding: 3em 0;
 }
 
 h3.agileits-title {

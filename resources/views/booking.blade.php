@@ -1,4 +1,4 @@
-@extends('layouts.headuser') 
+@extends('layouts.headindex') 
 @section('title', 'booking') 
 @section('content')
 
@@ -73,7 +73,7 @@
                 <div class="col-md-3"></div>
             </div>
             <a href="/bookingsum">
-                <button type="button" class="btn btn-primary" data-dismiss="modal" href={{url( '/bookingsum')}}>  <i class="fa fa-bookmark"></i> จองตอนนี้</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" href={{url( '/bookingsum')}}>  จองตอนนี้</button>
                 </a>
         </div>
     </div>

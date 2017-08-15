@@ -99,3 +99,8 @@ Route::get('/regisuser',function(){
 	return view ('regis_user');
 });
 
+Route::get('/booking',function(){
+	return view ('booking');
+});
+
+
