@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\trip;
 use App\schedules;
 use App\tripround;
+use Illuminate\Support\Facades\Input;
 class UserController extends Controller
 {
     
@@ -42,7 +43,6 @@ class UserController extends Controller
         return view('register');
     }
 
-    
     
 
 

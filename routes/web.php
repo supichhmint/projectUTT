@@ -72,6 +72,7 @@ Route::get('/search/index', 'UserController@index');
 
 Route::get('/schedule/{id}','UserController@schedule');
 Route::get('/search', 'UserController@search');
+Route::get('/searchtrip', 'UserController@searchtrip');
 Route::get('/agreement',function(){
 	return view ('agreement');
 });
@@ -103,4 +104,12 @@ Route::get('/booking',function(){
 	return view ('booking');
 });
 
-
+Route::post ( '/searcht', function () {
+	$q = Input::get ( 'q' );
+	$user = DB::table('trips')
+	->where ( 'trips_name', 'LIKE', '%' . $q . '%' )->get ();
+	if (count ( $user ) > 0)
+		return view ( 'tripuser' )->withDetails ( $user )->withQuery ( $q );
+	else
+		return view ( 'tripuser' )->withMessage ( 'No Details found. Try to search again !' );
+} );

@@ -1,4 +1,6 @@
-@extends('layouts.headindex') @section('title', 'Search Trip') @section('content')
+@extends('layouts.headindex') 
+@section('title', 'Search Trip') 
+@section('content')
 
 
 <!-- Page Content -->
@@ -8,14 +10,39 @@
         <div class="newsletter">
             <div class="container">
                 <h3 class="agileits-title">Our Tours</h3>
-                <form action="" method="post">
-                    <input type="text" name="text" placeholder="Enter destination..." required="">
+                <form action="searcht" method="post" role="searcht">
+                    {{ csrf_field() }}
+                    <input type="text" name="q" placeholder="Enter destination..." required="">
                     <input type="submit" value="search">
                     <div class="clearfix"> </div>
                 </form>
             </div>
         </div>
+<div class="container">
+        @if(isset($details))
+        <p> The Search results for your query <b> {{ $query }} </b> are :</p>
+        <h2>Sample User details</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr> 
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($details as $user)
+                <tr>
+                    <td>{{$user->trips_name}}</td>
+
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+        @elseif(isset($message))
+        <p>{{ $message }}</p>
+        @endif
     </div>
+</div>
 </div>
 
 <!-- Bootstrap core JavaScript -->
@@ -86,6 +113,7 @@
                     </div>
                 </div>
                 <div class="clearfix"></div>
+
                 <ul>
                     @foreach($trips as $tripuser )
                     <li>
@@ -99,7 +127,7 @@
                                                 <div class="info">Quick View</div>
                                             </div>
                                             <div class="product_container">
-                     <?php
+                                                <?php
             $tripagent = DB::table('travelagency')->where('id', $tripuser->travelagency_id)->first();
             
             $tripround = DB::table('triprounds')->where('trip_id', $tripuser->id)->get();
@@ -120,7 +148,7 @@
                         </div>
                         @endforeach
                     </li>
-                    
+
                 </ul>
                 </div>
                 <script src="js/search_tripUser/cbpViewModeSwitch.js" type="text/javascript"></script>
