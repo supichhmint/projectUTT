@@ -92,8 +92,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label>วันเกิด</label>
-                                    <input class="form-control start_day" name="birthday" id="birthday" type="text" 
-                                         id="nationnal" oninvalid="this.setCustomValidity('กรุณากรอกวันเริ่มเดินทาง')"
+                                    <input class="form-control start_day" name="birthday" id="birthday" type="date" 
+                                         id="nationnal" oninvalid="this.setCustomValidity('วันเกิด')"
                                         oninput="setCustomValidity('')" placeholder="รหัสประชาชน" onChange="myBirthday()"> 
                                 </div>
                                 <div class="col-md-6">
@@ -109,12 +109,12 @@
                                 </div>
                                 <div class="col-md-3">
                                     <label>รหัสไปรษณีย์</label>
-                                    <input class="form-control Departure_Date" name="zipcode" id="zipcode" type="text" oninvalid="this.setCustomValidity('กรุณากรอกวันสิ้นสุดการเดินทาง')"
-                                        oninput="setCustomValidity('')" placeholder="วันสิ้นสุดการเดินทาง" onChange="myZipcode()">
+                                    <input class="form-control Departure_Date" name="zipcode" id="zipcode" type="text" oninvalid="this.setCustomValidity('รหัสไปรษณี')"
+                                        oninput="setCustomValidity('')" placeholder="รหัสไปรษณีย์" onChange="myZipcode()">
                                 </div>
                                 <div class="col-md-3">
                                     <label>เบอร์โทรศัพท์</label>
-                                    <input class="form-control Departure_Date" name="phone" id="phone" type="text" oninvalid="this.setCustomValidity('กรุณากรอกวันสิ้นสุดการเดินทาง')"
+                                    <input class="form-control Departure_Date" name="phone" id="phone" type="text" oninvalid="this.setCustomValidity('เบอร์โทรศัพท์')"
                                         oninput="setCustomValidity('')" placeholder="เบอร์โทรศัพท์" onChange="myPhone()">
                                 </div>
                             </div>
