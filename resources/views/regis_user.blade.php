@@ -96,6 +96,7 @@
                                 <div class="col-md-6">
                                     <label for="exampleInputEmail1">รหัสผ่าน</label>
                                     <input type="text" class="form-control" name="	password" id="password" placeholder="กรุณากรอกอีเมลล์เพื่อยืนยันอีกครั้ง" >
+<<<<<<< HEAD
 =======
                             </div>
                             <ul class="list-inline pull-right">
@@ -138,6 +139,8 @@
                                             oninput="setCustomValidity('')" placeholder="เบอร์โทรศัพท์" onChange="myPhone()">
                                     </div>
 >>>>>>> dd58c5d443750867bdd120e9cceea099fd77d75c
+=======
+>>>>>>> parent of 7eaab03... register can avaliable
                                 </div>
 
 
