@@ -84,9 +84,7 @@ Route::get('/loginas',function(){
 Route::get('/logintourist',function(){
 	return view ('logintourist');
 });
-// Route::get('/profileuser',function(){
-// 	return view ('profile_user');
-// });
+
 Route::get('/profileagency',function(){
 	return view ('profile_user');
 });
