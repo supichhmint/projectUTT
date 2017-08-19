@@ -1,7 +1,7 @@
  
-<?php $__env->startSection('title', 'Page Title'); ?> 
+<?php $__env->startSection('title', 'Add Trip'); ?> 
 <?php $__env->startSection('content'); ?>
-<div class="container">
+
     <header2>
         <h2>Add Trip</h2>
     </header2>
@@ -88,6 +88,7 @@
                                     <label>วันเริ่มเดินทาง</label>
                                     <input class="form-control start_day" name="start_date[]" type="date" oninvalid="this.setCustomValidity('กรุณากรอกวันเริ่มเดินทาง')"
                                         oninput="setCustomValidity('')" placeholder="วันเริ่มเดินทาง" onChange="myStartdate()">
+                                        
                                 </div>
                                 <div class="col-md-3">
                                     <label>วันสิ้นสุดการเดินทาง</label>
@@ -246,7 +247,7 @@
             </form>
         </div>
     </div>
-</div>
+
 <script>
     function myTripname() {
         var x = document.getElementById("tripName").value;
@@ -401,21 +402,6 @@
 
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
-<!-- Script to Activate the Carousel -->
-<script>
-    $('.carousel').carousel({
-        interval: 5000 //changes the speed
-    })
-</script>
-
-</body>
-
-</html>
-<!-- jQuery -->
-<script src="js/jquery.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
 
 <!-- Script to Activate the Carousel -->
 <script>
@@ -461,7 +447,4 @@
 </script>
 <?php $__env->stopSection(); ?>
 
-</body>
-
-</html>
 <?php echo $__env->make('layouts.headlogo', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

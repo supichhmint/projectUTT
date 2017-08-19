@@ -1,7 +1,7 @@
 @extends('layouts.headlogo') 
-@section('title', 'Page Title') 
+@section('title', 'Add Trip') 
 @section('content')
-<div class="container">
+
     <header2>
         <h2>Add Trip</h2>
     </header2>
@@ -247,7 +247,7 @@
             </form>
         </div>
     </div>
-</div>
+
 <script>
     function myTripname() {
         var x = document.getElementById("tripName").value;
@@ -402,21 +402,6 @@
 
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
-<!-- Script to Activate the Carousel -->
-<script>
-    $('.carousel').carousel({
-        interval: 5000 //changes the speed
-    })
-</script>
-
-</body>
-
-</html>
-<!-- jQuery -->
-<script src="js/jquery.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
 
 <!-- Script to Activate the Carousel -->
 <script>
@@ -461,7 +446,3 @@
     }
 </script>
 @endsection
-
-</body>
-
-</html>

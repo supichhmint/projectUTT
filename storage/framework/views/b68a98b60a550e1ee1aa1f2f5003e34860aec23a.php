@@ -21,8 +21,9 @@
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
   <!--Theme CSS-->
-  <link href="css/uptotrain.min.css" rel="stylesheet">
-  <link href="css/login.css" rel="stylesheet">
+  <link href="css/uptotrain2.min.css" rel="stylesheet">
+  
+ <!-- <link href="css/login.css" rel="stylesheet">-->
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,7 +34,6 @@
 </head>
 
 <body>
-  <?php $__env->startSection('sidebar'); ?>
   <!-- Navigation -->
   <nav id="mainNav" class="navbar-inverse navbar-custom2 navbar-fixed-top">
     <div class="container">
@@ -71,12 +71,9 @@
     </div>
     <!-- /.container-fluid -->
   </nav>
-  <?php echo $__env->yieldSection(); ?>
 
   <div class="container">
     <?php echo $__env->yieldContent('content'); ?>
-
-    <?php echo $__env->yieldContent('js'); ?>
   </div>
 </body>
 

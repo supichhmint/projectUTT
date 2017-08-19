@@ -22,7 +22,8 @@
 
   <!--Theme CSS-->
   <link href="css/uptotrain2.min.css" rel="stylesheet">
-  
+  <!--<link href="css/login.css" rel="stylesheet">
+  <script src="js/regis.js"></script>-->
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,7 +34,6 @@
 </head>
 
 <body>
-  <?php $__env->startSection('sidebar'); ?>
   <!-- Navigation -->
   <nav id="mainNav" class="navbar-inverse navbar-custom2 navbar-fixed-top">
     <div class="container">
@@ -48,7 +48,7 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
-          
+
           <li>
             <a href="#services">Agreement</a>
           </li>
@@ -69,13 +69,13 @@
     </div>
     <!-- /.container-fluid -->
   </nav>
-  <?php echo $__env->yieldSection(); ?>
+
 
   <div class="container">
     <?php echo $__env->yieldContent('content'); ?>
 
-    <?php echo $__env->yieldContent('js'); ?>
   </div>
 </body>
 
 </html>
+
