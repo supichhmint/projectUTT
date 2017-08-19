@@ -102,3 +102,7 @@ Route::get('/regisuser',function(){
 	return view ('regis_user');
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
