@@ -1,12 +1,7 @@
 @extends('layouts.headprofile') 
 @section('title', 'profile') 
 @section('content')
-
-<!--
-<link href="css/bootstrap3.min.css" rel="stylesheet" type="text/css" >
-
-	<link href="css/member-style.css" type="text/css" rel="stylesheet">
-	<link href="css/blog.min.css" rel="stylesheet" type="text/css">-->
+	
 
 <link href="css/profile/blogttc.css" rel="stylesheet" type="text/css">
 <link href="css/profile/profile.css" rel="stylesheet" type="text/css">

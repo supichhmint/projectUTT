@@ -1,7 +1,7 @@
 /* Main container */
 
 .cbp-vm-switcher {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Prompt', sans-serif;
 }
 
 
@@ -16,17 +16,13 @@
     display: inline-block;
     width: 20px;
     height: 20px;
-    overflow: hidden;
     white-space: nowrap;
-    color: #d0d0d0;
+    color: #2222;
     margin: 2px;
 }
 
-.cbp-vm-options a:hover,
-.cbp-vm-options a.cbp-vm-selected {}
-
-a.cbp-vm-icon.cbp-vm-grid.cbp-vm-selected {
-    background: url(../img/search_tripUser/grid_view.png)no-repeat;
+a.cbp-vm-grid.cbp-vm-selected {
+    background: url(../img/search_tripUser/grid.png)no-repeat;
 }
 
 .cbp-vm-options a:hover,
@@ -111,14 +107,12 @@ a.cbp-vm-icon.cbp-vm-grid.cbp-vm-selected {
 
 /* Common icon styles */
 
-.cbp-vm-icon:before {}
-
-.cbp-vm-grid:before {
+.cbp-vm-grid {
     content: " ";
     background: url(../img/search_tripUser/grid_view.png)no-repeat;
 }
 
-.cbp-vm-list:before {
+.cbp-vm-list {
     content: " ";
     background: url(../img/search_tripUser/list_view.png)no-repeat;
 }
@@ -149,8 +143,8 @@ a.cbp-vm-icon.cbp-vm-grid.cbp-vm-selected {
 
 .cbp-vm-view-grid .cbp-vm-details {
     max-width: 300px;
-    min-height: 25px;
-    margin: 0 auto;
+    min-height: 20px;
+    margin: 0;
     color: #999;
     font-size: 0.9em;
 }
@@ -170,11 +164,19 @@ a.cbp-vm-icon.cbp-vm-grid.cbp-vm-selected {
 
 .cbp-vm-view-list .cbp-vm-image,
 .cbp-vm-view-list .cbp-vm-title,
-.cbp-vm-view-list .cbp-vm-details,
-.cbp-vm-view-list .cbp-vm-price,
-.cbp-vm-view-list .cbp-vm-add {
+.cbp-vm-view-list .cbp-vm-price {
     display: inline-block;
     vertical-align: middle;
+}
+
+.cbp-vm-view-list .cbp-vm-add {
+    display: inline-block;
+    vertical-align: 80px;
+}
+
+.cbp-vm-view-list .cbp-vm-details {
+    display: inline-block;
+    vertical-align: top;
 }
 
 .cbp-vm-view-list .cbp-vm-image {
@@ -226,9 +228,9 @@ a.cbp-vm-icon.cbp-vm-grid.cbp-vm-selected {
         width: auto;
     }
     .cbp-vm-view-list .cbp-vm-details {
-        /*--display: block;
-		width: 100%;
-		margin: 10px 0;--*/
+        display: block;
+        width: 100%;
+        margin: 10px 0;
     }
     .cbp-vm-view-list .cbp-vm-add {
         margin: 10px;

@@ -15,7 +15,7 @@ class UserController extends Controller
     }
 
     function search(){
-         $trips = DB::table('trips')->get();
+         $trips = Trip::paginate(15);
         return view('tripuser',['trips'=>$trips]);
     }
     

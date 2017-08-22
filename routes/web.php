@@ -104,12 +104,16 @@ Route::get('/booking',function(){
 	return view ('booking');
 });
 
+Route::get('/profilebooking',function(){
+	return view ('profile_booking');
+});
+
 Route::post ( '/searcht', function () {
 	$q = Input::get ( 'q' );
 	$user = DB::table('trips')
-	->where ( 'trips_name', 'LIKE', '%' . $q . '%' )->get ();
+	->where ( 'trips_name', 'LIKE', '%' . $q . '%' )->paginate(10);;
 	if (count ( $user ) > 0)
-		return view ( 'tripuser' )->withDetails ( $user )->withQuery ( $q );
+		return view ( 'tripuser_resultsearch' )->withDetails ( $user )->withQuery ( $q );
 	else
-		return view ( 'tripuser' )->withMessage ( 'No Details found. Try to search again !' );
+		return view ( 'tripuser_resultsearch' )->withMessage ( 'No Details found. Try to search again !' );
 } );
