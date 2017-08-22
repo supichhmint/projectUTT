@@ -30,29 +30,6 @@
                                 <i class="glyphicon glyphicon-ok"></i>
                             </span>
                         </a>
-<<<<<<< HEAD
-                    </li>
-                </ul>
-            </div>
-            <form role="form" action="/profileagency" method="POST" name="id">
-                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-                <div class="tab-content">
-                    <div class="tab-pane active" role="tabpanel" id="step1">
-                        <h3><strong>Step 1 </strong> - Basic Information</h3>
-                        <div class="step1">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label for="exampleInputEmail1">ชื่อจริง</label>
-                                    <input type="text" class="form-control" name="firstname" id="firstname" placeholder="ชื่อจริง" onChange="myFirstname()">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="exampleInputEmail1">นามสกุล</label>
-                                    <input type="text" class="form-control" name="lastname" id="lastname" placeholder="นามสกุล" onChange="myLastname()">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="exampleInputEmail1">เพศ</label>
-                                   <select id="gender" name="gender" onchange="myGender()">
-=======
                         </li>
                     </ul>
                 </div>
@@ -74,7 +51,6 @@
                                     <div class="col-md-6">
                                         <label for="exampleInputEmail1">เพศ</label>
                                         <select id="gender" name="gender" onchange="myGender()">
->>>>>>> dd58c5d443750867bdd120e9cceea099fd77d75c
                                         <option value="ชาย">ชาย
                                         <option value="หญิง">หญิง
                                         </select>
@@ -88,16 +64,6 @@
                                         <input type="password" class="form-control" name="password" id="password" placeholder="รหัสผ่าน">
                                     </div>
                                 </div>
-<<<<<<< HEAD
-                                <div class="col-md-6">
-                                    <label for="exampleInputEmail1">อีเมลล์</label>
-                                    <input type="text" class="form-control" name="email" id="email" placeholder="อีเมลล์" onChange="myEmail()">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="exampleInputEmail1">รหัสผ่าน</label>
-                                    <input type="text" class="form-control" name="	password" id="password" placeholder="กรุณากรอกอีเมลล์เพื่อยืนยันอีกครั้ง" >
-<<<<<<< HEAD
-=======
                             </div>
                             <ul class="list-inline pull-right">
                                 <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
@@ -138,9 +104,6 @@
                                         <input class="form-control Departure_Date" name="phone" id="phone" type="text" oninvalid="this.setCustomValidity('เบอร์โทรศัพท์')"
                                             oninput="setCustomValidity('')" placeholder="เบอร์โทรศัพท์" onChange="myPhone()">
                                     </div>
->>>>>>> dd58c5d443750867bdd120e9cceea099fd77d75c
-=======
->>>>>>> parent of 7eaab03... register can avaliable
                                 </div>
 
 

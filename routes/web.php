@@ -84,13 +84,9 @@ Route::get('/loginas',function(){
 Route::get('/logintourist',function(){
 	return view ('logintourist');
 });
-<<<<<<< HEAD
-
-=======
 Route::get('/profileuser',function(){
 	return view ('profile_user');
 });
->>>>>>> parent of 7eaab03... register can avaliable
 Route::get('/profileagency',function(){
 	return view ('profile_user');
 });
