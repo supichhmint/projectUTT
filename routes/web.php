@@ -14,20 +14,7 @@ Route::get('/', function()
 {
 	return View::make('index');
 });
-Route::get('/login', function()
-{
-	return View::make('login');
-});
 
-Route::get('/documentation', function()
-{
-	return View::make('documentation');
-});
-
-Route::get('/app', function()
-{
-	return View::make('app');
-});
 
 Route::get('/addTrip', function()
 {
@@ -71,6 +58,7 @@ Route::get('/search/schedule', 'UserController@schedule');
 Route::get('/search/index', 'UserController@index');
 
 Route::get('/schedule/{id}','UserController@schedule');
+
 Route::get('/search', 'UserController@search');
 Route::get('/agreement',function(){
 	return view ('agreement');
@@ -98,4 +86,6 @@ Route::get('/regisag',function(){
 Route::get('/regisuser',function(){
 	return view ('regis_user');
 });
+
+Route::get('/booking/{id}','UserController@booking');
 

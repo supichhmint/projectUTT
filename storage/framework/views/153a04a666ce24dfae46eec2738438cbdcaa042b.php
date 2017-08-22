@@ -1,5 +1,5 @@
-@extends('layouts.layout') 
-@section('content')
+ 
+<?php $__env->startSection('content'); ?>
 
 <!-- newedit About Section -->
 
@@ -22,11 +22,11 @@
     <div class="row">
             <div class="modal-body">
                 <!-- Project Details Go Here -->
-                <h2>{{ $trip->trips_name }}</h2>
+                <h2><?php echo e($trip->trips_name); ?></h2>
                 <!--<p class="item-intro text-muted">จังหวัด<br>โดย "$บริษัททัวร์"</p>-->
-                <p>ระยะเวลา {{ $trip->trip_nday }} วัน {{ $trip->trip_nnight }} คืน</p>
+                <p>ระยะเวลา <?php echo e($trip->trip_nday); ?> วัน <?php echo e($trip->trip_nnight); ?> คืน</p>
                 <img class="img-responsive img-centered" src="/img/portfolio/trip1_00.jpg" alt="">
-                <p>{{$trip->trip_description}}</p>
+                <p><?php echo e($trip->trip_description); ?></p>
 
                 <br><br>
 
@@ -44,27 +44,27 @@
                         
                             <ul class="timeline">
                                 <!--ถ้าเลขคู่ ตรง li จะเพิ่ม class='timeline-inverted'-->
-                                @foreach($schedules as $schedule)
-                                <h3>{{$loop->iteration}}</h3>
-                                @if($loop->iteration %2 == 0)
+                                <?php $__currentLoopData = $schedules; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $schedule): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <h3><?php echo e($loop->iteration); ?></h3>
+                                <?php if($loop->iteration %2 == 0): ?>
                                     <li class="timeline-inverted">
-                                @else
+                                <?php else: ?>
                                     <li>
-                                @endif
+                                <?php endif; ?>
                                     <div class="timeline-image">
                                         <img class="img-circle img-responsive" src="/img/about/1.jpg" alt="">
                                     </div>
                                     <div class="timeline-panel">
                                         <div class="timeline-heading">
-                                            <h4>วันที่ {{ $schedule->schedule_day }} เวลา {{ $schedule->schedule_time }}</h4>
-                                            <h4 class="subheading">{{ $schedule->schedule_place }}</h4>
+                                            <h4>วันที่ <?php echo e($schedule->schedule_day); ?> เวลา <?php echo e($schedule->schedule_time); ?></h4>
+                                            <h4 class="subheading"><?php echo e($schedule->schedule_place); ?></h4>
                                         </div>
                                         <div class="timeline-body">
-                                            <p class="text-muted">{{ $schedule->schedule_description }}</p>
+                                            <p class="text-muted"><?php echo e($schedule->schedule_description); ?></p>
                                         </div>
                                     </div>
                                 </li>
-                                @endforeach
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                                 
                                 <li class="timeline-inverted">
@@ -99,18 +99,18 @@
                                         <th>จำนวนที่ว่าง</th>
                                     </tr>
                                     <!-- edit add loop select for db -->
-                                    @foreach($triprounds as $tripround)
+                                    <?php $__currentLoopData = $triprounds; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tripround): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <tr>
-                                        <td>{{ $tripround->start_date }}</td>
-                                        <td>{{$tripround->price_adult}}</td>
-                                        <td>{{$tripround->price_child}}</td>
-                                        <td>{{$tripround->amount_seats}}</td>
+                                        <td><?php echo e($tripround->start_date); ?></td>
+                                        <td><?php echo e($tripround->price_adult); ?></td>
+                                        <td><?php echo e($tripround->price_child); ?></td>
+                                        <td><?php echo e($tripround->amount_seats); ?></td>
                                         <?php
                                              $tid="{{$tripround->id}}"
                                          ?>
-                                        <td><a class="btn btn-primary" href="/booking/{{$tripround->id}}" name ="{{$tid}}">ดูรายการทัวร์นี้</a></td>
+                                        <td><a class="btn btn-primary" href="/booking/<?php echo e($tripround->id); ?>" name ="<?php echo e($tid); ?>">ดูรายการทัวร์นี้</a></td>
                                     </tr>
-                                    @endforeach
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </table>
                                 <!-- end loop -->
                             </ul>
@@ -118,7 +118,7 @@
                         <div class="col-md-3"></div>
                     </div>
 
-                    <a  class="btn btn-primary"  href={{ url( '/search') }}>  <i class="fa fa-times"></i> Close This</a>
+                    <a  class="btn btn-primary"  href=<?php echo e(url( '/search')); ?>>  <i class="fa fa-times"></i> Close This</a>
                 </div>
             </div>
     </div>
@@ -153,4 +153,5 @@
 
 </html>
 
-@endsection('content')
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

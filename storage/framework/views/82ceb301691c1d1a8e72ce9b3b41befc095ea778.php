@@ -1,6 +1,6 @@
-@extends('layouts.headuser') 
-@section('title', 'booking') 
-@section('content')
+ 
+<?php $__env->startSection('title', 'booking'); ?> 
+<?php $__env->startSection('content'); ?>
 
 <!-- newedit About Section -->
 <!--<section id="about" align="center"  padding-top= "50%">-->
@@ -34,11 +34,11 @@
                             <tr>
                                 <td>
                                     <select name="tripround">
-                                      @foreach($triprounds as $tripround)    
-                                        <option value="saab">{{ $tripround->start_date }}</option>
+                                      <?php $__currentLoopData = $triprounds; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tripround): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>    
+                                        <option value="saab"><?php echo e($tripround->start_date); ?></option>
                                        
                                       </select>
-                                      @endforeach
+                                      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </td>
 
                                 <td>
@@ -75,7 +75,7 @@
                 <div class="col-md-3"></div>
             </div>
             <a href="/bookingsum">
-                <button type="button" class="btn btn-primary" data-dismiss="modal" href={{url( '/bookingsum')}}>  <i class="fa fa-bookmark"></i> จองตอนนี้</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" href=<?php echo e(url( '/bookingsum')); ?>>  <i class="fa fa-bookmark"></i> จองตอนนี้</button>
                 </a>
         </div>
     </div>
@@ -109,4 +109,5 @@
 
 </html>
 
-@endsection('content')
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.headuser', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

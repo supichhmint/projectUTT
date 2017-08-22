@@ -20,7 +20,7 @@
     <form class="form" method="post" action="/loginme">
 
       <p class="field">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
         <input type="text" name="Agencyemail " placeholder="email" required/>
         <i class="fa fa-user"></i>
       </p>
