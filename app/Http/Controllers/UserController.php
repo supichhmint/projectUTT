@@ -32,13 +32,13 @@ class UserController extends Controller
         return view('schedule', $data);
     }
     function booking($id){
-        
-        $triprounds = tripround::where('trip_id',$id)->get();
-        $trip = trip::where('id',$id)->first();
+        $fk = DB::table('triprounds')->select('trip_id')->where('id',$id)->pluck('trip_id');
+
+        $trip = DB::table('trips')->where('id',$fk)->get();
+        $triprounds = tripround::where('id',$id)->first();
         $data = array(
             'triprounds' => $triprounds,
             'trip' => $trip,
-            'title' => 'Schedules'
         );
         return view('booking', $data);
 

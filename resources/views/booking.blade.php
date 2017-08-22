@@ -8,15 +8,16 @@
 <div class="welcome about">
     <div class="container" align="center">
         <div class="row">
+        @foreach($trip as $trips)
             <div>
-                <h2>เขื่อนป่าสักชลสิทธิ์</h2>
-                <h6>โดย บริษัท</h6>
-                <!--<p class="item-intro text-muted">จังหวัด<br>โดย "$บริษัททัวร์"</p>-->
-                <p>ระยะเวลา วัน คืน</p>
+                <h2>{{$trips->trips_name}}</h2>
+                <h5>{{$trips->trip_nday}}วัน {{$trips->trip_nnight}}คืน</h5>
+                <p>{{$trips->trip_province}}</p>
+                <p>{{$trips->trip_meal}}</p>
                 <img class="img-responsive img-centered" src="/img/portfolio/trip1_00.jpg" alt="">
-                <p>"$คำอธิบายทริป"</p>
+                <p></p>
             </div>
-
+@endforeach
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
@@ -33,37 +34,21 @@
                             
                             <tr>
                                 <td>
-                                    <select name="tripround">
-                                      @foreach($triprounds as $tripround)    
-                                        <option value="saab">{{ $tripround->start_date }}</option>
+                                     
+                                        {{$triprounds->start_date}} - {{$triprounds->departure_date}}
                                        
-                                      </select>
-                                      @endforeach
                                 </td>
 
                                 <td>
-                                    <select name="cars">
-                                      <!--
-                                        <option value="volvo">ลูปตามจำนวนที่ว่างในรอบนั้น</option>
-                                        -->
-                                        <option value="volvo">1</option>
-                                        <option value="saab">2</option>
-                                        <option value="fiat">3</option>
-                                        <option value="audi">4</option>
-                                      </select>
+                                    จำนวนเด็ก 
                                 </td>
 
                                 <td>
-                                    <select name="cars">
-                                         <option value="volvo">1</option>
-                                        <option value="saab">2</option>
-                                        <option value="fiat">3</option>
-                                        <option value="audi">4</option>
-                                      </select>
+                                   จำนวนผู้ใหญ่
                                 </td>
 
                                 <td>
-                                    $จำนวนที่ว่าง
+                                     {{$triprounds->amount_seats}}
                                 </td>
 
 
