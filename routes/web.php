@@ -18,6 +18,7 @@ Route::get('/login', function()
 {
 	return View::make('login');
 });
+
 Route::get('/documentation', function()
 {
 	return View::make('documentation');
@@ -87,10 +88,6 @@ Route::get('/logintourist',function(){
 Route::get('/profileuser',function(){
 	return view ('profile_user');
 });
-Route::get('/profileagency',function(){
-	return view ('profile_user');
-});
-
 Route::get('/profilesetting',function(){
 	return view ('profile_setting');
 });
