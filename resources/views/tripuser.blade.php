@@ -23,8 +23,9 @@
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/tether/tether.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-@endsection('content') @section('tripuser')
-</div>
+@endsection 
+@section('tripuser')
+
 <div class="container">
     <link href="css/search_tripUser/style.css" rel="stylesheet" type="text/css" />
     <link href="css/search_tripUser/component.css" rel='stylesheet' type='text/css' />
@@ -33,7 +34,7 @@
         <div class="products-page">
             <div class="products">
                 <div class="product-listy">
-                    <h2>our Products</h2>
+                    <h2>All trips</h2>
                     <ul class="product-list">
                         <li><a href="">New Products</a></li>
                         <li><a href="">Old Products</a></li>
@@ -48,23 +49,17 @@
                 <div class="tags">
                     <h4 class="tag_head">Tags Widget</h4>
                     <ul class="tags_links">
-                        <li><a href="#">Kitesurf</a></li>
-                        <li><a href="#">Super</a></li>
-                        <li><a href="#">Duper</a></li>
-                        <li><a href="#">Theme</a></li>
-                        <li><a href="#">Men</a></li>
-                        <li><a href="#">Women</a></li>
-                        <li><a href="#">Equipment</a></li>
-                        <li><a href="#">Best</a></li>
-                        <li><a href="#">Accessories</a></li>
-                        <li><a href="#">Men</a></li>
-                        <li><a href="#">Apparel</a></li>
-                        <li><a href="#">Super</a></li>
-                        <li><a href="#">Duper</a></li>
-                        <li><a href="#">Theme</a></li>
-                        <li><a href="#">Responsive</a></li>
-                        <li><a href="#">Women</a></li>
-                        <li><a href="#">Equipment</a></li>
+                        <li><a href="/search?=หัวหิน">หัวหิน</a></li>
+                        <li><a href="#">เชียงใหม่</a></li>
+                        <li><a href="#">กรุงเทพฯ</a></li>
+                        <li><a href="#">กาญจนบุรี</a></li>
+                        <li><a href="#">แพร่</a></li>
+                        <li><a href="#">นครปฐม</a></li>
+                        <li><a href="#">อุดรธานี</a></li>
+                        <li><a href="#">ขอนแก่น</a></li>
+                        <li><a href="#">ชลบุรี</a></li>
+                        <li><a href="#">สุราษฐ์ธานี</a></li>
+                        <li><a href="#">ภูเก็ต</a></li>
                     </ul>
                 </div>
             </div>
@@ -76,7 +71,7 @@
                     </div>
                     <div class="pages">
                         <h4>{{$trips->total()}} total trips</h4>
-                        <h5>In this page {{$trips->count()}} trips</h5> 
+                        <h5>In this page {{$trips->count()}} trips</h5>
                     </div>
                     <div class="clearfix"></div>
                     <ul>
@@ -102,7 +97,8 @@
                                                             <p>จังหวัด {{$tripuser->trip_province}}</p>
                                                             <p>บริษัท {{$tripagent->agency_name_en}}</p><br>
                                                             <p>ระยะเวลา {{$tripuser->trip_nday}} วัน {{$tripuser->trip_nnight}}
-                                                                คืน</p>
+                                                                คืน
+                                                            </p>
                                                         </div>
                                                         <div class="clearfix"></div>
                                                     </div>
@@ -118,6 +114,7 @@
                             </li>
                             @endforeach
                     </ul>
+                    
                 </div>
                 <div align="center">
                     {{$trips->render()}}

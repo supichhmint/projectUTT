@@ -1,5 +1,5 @@
 @extends('layouts.headprofile') 
-@section('title', 'profile') 
+@section('title', 'booking') 
 @section('content')
 
 <!--
@@ -10,68 +10,121 @@
 
 <link href="css/profile/blogttc.css" rel="stylesheet" type="text/css">
 <link href="css/profile/profile.css" rel="stylesheet" type="text/css">
+
+<link href="css/search_tripUser/style.css" rel="stylesheet" type="text/css">
 <div class="container">
-	<div class="blog-page blog-content-1">
-		<div class="row">
-			<div class="col-md-9" style="padding-top: 50px">
-				<h2>กิจกรรมเมื่อเร็วๆนี้</h2>
-				<div class="travelo-box">
-					<div class="row">
-						<div class="col-md-6 col-sm-6 col-xs-6">
-							<h4>เพิ่งไปล่าสุด</h4>
-							<div class="image-box style14">
-								<article class="box" style="padding-top: 50px; padding-left:50px;">
-									<div class="details">
-										<h5 class="box-title"><a href="#"> ไม่มีรายการ </a></h5>
-										<label class="price-wrapper"><span class="price-per-unit">  </span></label>
-									</div>
-								</article>
+	<div class="cart-items">
+		<div class="container">
+			<h2>MY SHOPPING BAG (3)</h2>
+			<div class="cart-gd">
+				<script>
+					$(document).ready(function (c) {
+						$('.close1').on('click', function (c) {
+							$('.cart-header').fadeOut('slow', function (c) {
+								$('.cart-header').remove();
+							});
+						});
+					});
+				</script>
+				<div class="cart-header">
+					<div class="close1"> </div>
+					<div class="cart-sec simpleCart_shelfItem">
+						<div class="cart-item cyc">
+							<img src="images/l1.jpg" class="img-responsive" alt="">
+						</div>
+						<div class="cart-item-info">
+							<h3><a href="#"> Lorem Ipsum is not simply </a><span>Pickup time:</span></h3>
+							<ul class="qty">
+								<li>
+									<p>Min. order value:</p>
+								</li>
+								<li>
+									<p>FREE delivery</p>
+								</li>
+							</ul>
+							<div class="delivery">
+								<p>Service Charges : $10.00</p>
+								<span>Delivered in 1-1:30 hours</span>
+								<div class="clearfix"></div>
 							</div>
 						</div>
-						<div class="col-md-6 col-sm-6 col-xs-6">
-							<h4>กำลังไปเร็วๆนี้</h4>
-							<div class="image-box style14">
-								<article class="box" style="padding-top: 50px; padding-left:50px;">
-									<div class="details">
-										<h5 class="box-title"><a href="#"> ไม่มีรายการ </a></h5>
-										<label class="price-wrapper"><span class="price-per-unit">  </span></label>
-									</div>
-								</article>
-							</div>
-						</div>
+						<div class="clearfix"></div>
+
 					</div>
 				</div>
-			</div>
-			<div class="sidebar col-md-3">
-				<div class="travelo-box book-with-us-box">
-					<h4>ค้นหาการเดินทางครั้งใหม่</h4>
-					<ul>
-						<li>
-							<!--<i class="soap-icon-hotel-1 circle blue-color"></i>-->
-							<i class="soap-icon fa fa-briefcase circle blue-color"></i>
-							<h5 class="title"><a href="/hotel" target="_blank">
-									ค้นหาโรงแรมที่ดีที่สุด</a></h5>
-						</li>
-						<li>
-							<i class="icon soap-icon-plane-right takeoff-effect yellow-color circle"></i>
-							<h5 class="title"><a href="/restuarant" target="_blank">
-									ค้นหาร้านอาหารสุดคุ้ม</a></h5>
-						</li>
-						<li>
-						<i class="icon soap-icon-plane circle red-color"></i>
-							<!--<i class="soap-icon-places circle red-color"></i>-->
-							<h5 class="title"><a href="/trips" target="_blank">
-									ทริปยอดนิยม</a></h5>
-						</li>
-						<li>
-							<i class="soap-icon-beach circle green-color"></i>
-							<h5 class="title"><a href="/thailandtrips" target="_blank">
-									ทริปในประเทศสุดชิล</a></h5>
-						</li>
-					</ul>
+				<script>
+					$(document).ready(function (c) {
+						$('.close2').on('click', function (c) {
+							$('.cart-header2').fadeOut('slow', function (c) {
+								$('.cart-header2').remove();
+							});
+						});
+					});
+				</script>
+				<div class="cart-header2">
+					<div class="close2"> </div>
+					<div class="cart-sec simpleCart_shelfItem">
+						<div class="cart-item cyc">
+							<img src="images/l2.jpg" class="img-responsive" alt="">
+						</div>
+						<div class="cart-item-info">
+							<h3><a href="#"> Lorem Ipsum is not simply </a><span>Pickup time:</span></h3>
+							<ul class="qty">
+								<li>
+									<p>Min. order value:</p>
+								</li>
+								<li>
+									<p>FREE delivery</p>
+								</li>
+							</ul>
+							<div class="delivery">
+								<p>Service Charges : $10.00</p>
+								<span>Delivered in 3-3:30 hours</span>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+
+					</div>
+				</div>
+				<script>
+					$(document).ready(function (c) {
+						$('.close3').on('click', function (c) {
+							$('.cart-header3').fadeOut('slow', function (c) {
+								$('.cart-header3').remove();
+							});
+						});
+					});
+				</script>
+				<div class="cart-header3">
+					<div class="close3"> </div>
+					<div class="cart-sec simpleCart_shelfItem">
+						<div class="cart-item cyc">
+							<img src="images/l3.jpg" class="img-responsive" alt="">
+						</div>
+						<div class="cart-item-info">
+							<h3><a href="#"> Lorem Ipsum is not simply </a><span>Pickup time:</span></h3>
+							<ul class="qty">
+								<li>
+									<p>Min. order value:</p>
+								</li>
+								<li>
+									<p>FREE delivery</p>
+								</li>
+							</ul>
+							<div class="delivery">
+								<p>Service Charges : $10.00</p>
+								<span>Delivered On Tomorrow</span>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
 @endsection

@@ -43,23 +43,22 @@
 					<ul>
 						<li>
 							<!--<i class="soap-icon-hotel-1 circle blue-color"></i>-->
-							<i class="soap-icon fa fa-briefcase circle blue-color"></i>
 							<h5 class="title"><a href="/hotel" target="_blank">
 									ค้นหาโรงแรมที่ดีที่สุด</a></h5>
 						</li>
 						<li>
-							<i class="icon soap-icon-plane-right takeoff-effect yellow-color circle"></i>
+							<!--<i class="icon soap-icon-plane-right takeoff-effect yellow-color circle"></i>-->
 							<h5 class="title"><a href="/restuarant" target="_blank">
 									ค้นหาร้านอาหารสุดคุ้ม</a></h5>
 						</li>
 						<li>
-						<i class="icon soap-icon-plane circle red-color"></i>
+						<!--<i class="icon soap-icon-plane circle red-color"></i>-->
 							<!--<i class="soap-icon-places circle red-color"></i>-->
 							<h5 class="title"><a href="/trips" target="_blank">
 									ทริปยอดนิยม</a></h5>
 						</li>
 						<li>
-							<i class="soap-icon-beach circle green-color"></i>
+							<!--<i class="soap-icon-beach circle green-color"></i>-->
 							<h5 class="title"><a href="/thailandtrips" target="_blank">
 									ทริปในประเทศสุดชิล</a></h5>
 						</li>

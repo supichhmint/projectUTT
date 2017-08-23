@@ -1,4 +1,6 @@
-@extends('layouts.headindex') @section('title', 'Search Trip') @section('content')
+@extends('layouts.headindex') 
+@section('title', 'Search Trip') 
+@section('content')
 
 
 <!-- Page Content -->
@@ -23,7 +25,8 @@
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/tether/tether.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-@endsection('content') @section('tripuser')
+@endsection
+ @section('tripuser')
 </div>
 <div class="container">
 
@@ -51,21 +54,15 @@
                     <ul class="tags_links">
                         <li><a href="#">หัวหิน</a></li>
                         <li><a href="#">เชียงใหม่</a></li>
-                        <li><a href="#">Duper</a></li>
-                        <li><a href="#">Theme</a></li>
-                        <li><a href="#">Men</a></li>
-                        <li><a href="#">Women</a></li>
-                        <li><a href="#">Equipment</a></li>
-                        <li><a href="#">Best</a></li>
-                        <li><a href="#">Accessories</a></li>
-                        <li><a href="#">Men</a></li>
-                        <li><a href="#">Apparel</a></li>
-                        <li><a href="#">Super</a></li>
-                        <li><a href="#">Duper</a></li>
-                        <li><a href="#">Theme</a></li>
-                        <li><a href="#">Responsive</a></li>
-                        <li><a href="#">Women</a></li>
-                        <li><a href="#">Equipment</a></li>
+                        <li><a href="#">กรุงเทพฯ</a></li>
+                        <li><a href="#">กาญจนบุรี</a></li>
+                        <li><a href="#">แพร่</a></li>
+                        <li><a href="#">นครปฐม</a></li>
+                        <li><a href="#">อุดรธานี</a></li>
+                        <li><a href="#">ขอนแก่น</a></li>
+                        <li><a href="#">ชลบุรี</a></li>
+                        <li><a href="#">สุราษฐ์ธานี</a></li>
+                        <li><a href="#">ภูเก็ต</a></li>
                     </ul>
                 </div>
             </div>
@@ -81,12 +78,11 @@
                         <h5>In this page {{$details->count()}} trips</h5> 
                     </div>
                     <div class="clearfix"></div>
-                
                 <p> The Search results for your destination <b> {{ $query }} </b> are :</p>
                 <ul>
                     @foreach($details as $user)
                     <li>
-                        <a class="cbp-vm-image" href="single.html">
+                        <a class="cbp-vm-image" href="/schedule/{{$user->id}}">
                             <div class="simpleCart_shelfItem">
                                 <div class="view view-first">
                                     <div class="inner_content clearfix">
@@ -113,9 +109,11 @@
                     </li>
                     @endforeach
                 </ul>
+                 
                 @elseif(isset($message))
                 <p>{{ $message }}</p>
                 @endif
+               
             </div>
             <script src="js/search_tripUser/cbpViewModeSwitch.js" type="text/javascript"></script>
             <script src="js/search_tripUser/classie.js" type="text/javascript"></script>
@@ -123,6 +121,6 @@
         <div class="clearfix"></div>
     </div>
 </div>
-</div>
+
 
 @endsection

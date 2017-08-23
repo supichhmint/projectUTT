@@ -104,6 +104,7 @@
 
   <?php echo $__env->yieldContent('content'); ?> 
   <?php echo $__env->yieldContent('tripuser'); ?>
+  <?php echo $__env->yieldContent('schedule'); ?>
 
   <!-- footer start here -->
   <div class="footer-agile">

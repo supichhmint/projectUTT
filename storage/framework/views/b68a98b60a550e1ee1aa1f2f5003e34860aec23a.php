@@ -76,7 +76,6 @@
   <div class="container">
     <?php echo $__env->yieldContent('content'); ?>
 
-    <?php echo $__env->yieldContent('js'); ?>
   </div>
 </body>
 

@@ -117,3 +117,4 @@ Route::post ( '/searcht', function () {
 	else
 		return view ( 'tripuser_resultsearch' )->withMessage ( 'No Details found. Try to search again !' );
 } );
+

@@ -16,8 +16,7 @@
     display: inline-block;
     width: 20px;
     height: 20px;
-    white-space: nowrap;
-    color: #2222;
+    color: #222;
     margin: 2px;
 }
 
@@ -108,12 +107,10 @@ a.cbp-vm-grid.cbp-vm-selected {
 /* Common icon styles */
 
 .cbp-vm-grid {
-    content: " ";
     background: url(../img/search_tripUser/grid_view.png)no-repeat;
 }
 
 .cbp-vm-list {
-    content: " ";
     background: url(../img/search_tripUser/list_view.png)no-repeat;
 }
 

@@ -104,6 +104,7 @@
 
   @yield('content') 
   @yield('tripuser')
+  @yield('schedule')
 
   <!-- footer start here -->
   <div class="footer-agile">

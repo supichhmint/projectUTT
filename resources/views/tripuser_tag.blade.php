@@ -1,6 +1,4 @@
- 
-<?php $__env->startSection('title', 'Search Trip'); ?> 
-<?php $__env->startSection('content'); ?>
+@extends('layouts.headindex') @section('title', 'Search Trip') @section('content')
 
 
 <!-- Page Content -->
@@ -11,8 +9,7 @@
             <div class="container">
                 <h3 class="agileits-title">Our Tours</h3>
                 <form action="searcht" method="post" role="searcht">
-                    <?php echo e(csrf_field()); ?>
-
+                    {{ csrf_field() }}
                     <input type="text" name="q" placeholder="Enter destination..." required="">
                     <input type="submit" value="search">
                     <div class="clearfix"> </div>
@@ -26,8 +23,7 @@
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/tether/tether.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<?php $__env->stopSection(); ?>
- <?php $__env->startSection('tripuser'); ?>
+@endsection('content') @section('tripuser')
 </div>
 <div class="container">
 
@@ -53,7 +49,7 @@
                 <div class="tags">
                     <h4 class="tag_head">Tags Widget</h4>
                     <ul class="tags_links">
-                        <li><a href="#">หัวหิน</a></li>
+                        <li><a href="/search?=หัวหิน">หัวหิน</a></li>
                         <li><a href="#">เชียงใหม่</a></li>
                         <li><a href="#">กรุงเทพฯ</a></li>
                         <li><a href="#">กาญจนบุรี</a></li>
@@ -73,17 +69,18 @@
                         <a href="#" class="cbp-vm-icon cbp-vm-grid" data-view="cbp-vm-view-grid" title="grid"></a>
                         <a href="#" class="cbp-vm-icon cbp-vm-list" data-view="cbp-vm-view-list" title="list"></a>
                     </div>
-                    <?php if(isset($details)): ?>
+                    @if(isset($details))
                     <div class="pages">
-                        <h4><?php echo e($details->total()); ?> total trips</h4>
-                        <h5>In this page <?php echo e($details->count()); ?> trips</h5> 
+                        <h4>{{$details->total()}} total trips</h4>
+                        <h5>In this page {{$details->count()}} trips</h5> 
                     </div>
                     <div class="clearfix"></div>
-                <p> The Search results for your destination <b> <?php echo e($query); ?> </b> are :</p>
+                
+                <p> The Search results for your destination <b> {{ $query }} </b> are :</p>
                 <ul>
-                    <?php $__currentLoopData = $details; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    @foreach($details as $user)
                     <li>
-                        <a class="cbp-vm-image" href="/schedule/<?php echo e($user->id); ?>">
+                        <a class="cbp-vm-image" href="/schedule/{{$tripuser->id}}">
                             <div class="simpleCart_shelfItem">
                                 <div class="view view-first">
                                     <div class="inner_content clearfix">
@@ -94,7 +91,7 @@
                                             </div>
                                             <div class="product_container">
                                                 <div class="cart-left">
-                                                    <p class="title"><?php echo e($user->trips_name); ?></p>
+                                                    <p class="title">{{$user->trips_name}}</p>
                                                 </div>
                                                 <div class="clearfix"></div>
                                             </div>
@@ -108,13 +105,11 @@
                         </div>
                         <a class="cbp-vm-icon cbp-vm-add item_add" href="#">Add to cart</a>
                     </li>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    @endforeach
                 </ul>
-                 
-                <?php elseif(isset($message)): ?>
-                <p><?php echo e($message); ?></p>
-                <?php endif; ?>
-               
+                @elseif(isset($message))
+                <p>{{ $message }}</p>
+                @endif
             </div>
             <script src="js/search_tripUser/cbpViewModeSwitch.js" type="text/javascript"></script>
             <script src="js/search_tripUser/classie.js" type="text/javascript"></script>
@@ -122,7 +117,6 @@
         <div class="clearfix"></div>
     </div>
 </div>
+</div>
 
-
-<?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.headindex', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+@endsection

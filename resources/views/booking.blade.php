@@ -2,82 +2,115 @@
 @section('title', 'booking') 
 @section('content')
 
-<!-- newedit About Section -->
-<!--<section id="about" align="center"  padding-top= "50%">-->
+<div align="right">
+    <button type="button" class="btn btn-default btn-lg">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Close
+            </button>
+</div>
 <!--<div class="container">-->
-<div class="welcome about">
-    <div class="container" align="center">
-        <div class="row">
-            <div>
-                <h2>เขื่อนป่าสักชลสิทธิ์</h2>
-                <h6>โดย บริษัท</h6>
-                <!--<p class="item-intro text-muted">จังหวัด<br>โดย "$บริษัททัวร์"</p>-->
-                <p>ระยะเวลา วัน คืน</p>
-                <img class="img-responsive img-centered" src="/img/portfolio/trip1_00.jpg" alt="">
-                <p>"$คำอธิบายทริป"</p>
-            </div>
+<div class="container" id="about" align="center">
+    <div class="row">
+        <div class="modal-body">
+            <!-- Project Details Go Here -->
+            <h2>{{ $trip->trips_name }}</h2>
+            <!--<p class="item-intro text-muted">จังหวัด<br>โดย "$บริษัททัวร์"</p>-->
+            <p>ระยะเวลา {{ $trip->trip_nday }} วัน {{ $trip->trip_nnight }} คืน</p>
+            <img class="img-responsive img-centered" src="/img/portfolio/trip1_00.jpg" alt="">
+            <p>{{$trip->trip_description}}</p>
 
-            <div class="row">
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
-                    <ul class="list-inline">
-                        <table class="table">
-                            <tr>
-                                <th>รอบวันที่</th>
-                                <th>จำนวนผู้ใหญ่</th>
-                                <th>จำนวนเด็ก</th>
-                                <th>จำนวนที่ว่าง</th>
-                            </tr>
-                            <!-- edit add loop select for db -->
-                            <tr>
-                                <td>
-                                    <select name="tripround">
-                                        
-                                        <option value="saab">2017/10/01</option>
-                                        <option value="fiat">2017/11/01</option>
-                                        <option value="audi">2017/12/01</option>
-                                      </select>
-                                </td>
+            <br><br>
 
-                                <td>
-                                    <select name="cars">
-                                      <!--
-                                        <option value="volvo">ลูปตามจำนวนที่ว่างในรอบนั้น</option>
-                                        -->
-                                        <option value="volvo">1</option>
-                                        <option value="saab">2</option>
-                                        <option value="fiat">3</option>
-                                        <option value="audi">4</option>
-                                      </select>
-                                </td>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">Schedule</h2>
+                        <h3 class="section-subheading text-muted">" ไปไหนบ้างนะ "</h3>
 
-                                <td>
-                                    <select name="cars">
-                                         <option value="volvo">1</option>
-                                        <option value="saab">2</option>
-                                        <option value="fiat">3</option>
-                                        <option value="audi">4</option>
-                                      </select>
-                                </td>
-
-                                <td>
-                                    $จำนวนที่ว่าง
-                                </td>
-
-
-                            </tr>
-                        </table>
-                        <!-- end loop -->
-                    </ul>
+                    </div>
                 </div>
-                <div class="col-md-3"></div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <ul class="timeline">
+                            <!--ถ้าเลขคู่ ตรง li จะเพิ่ม class='timeline-inverted'-->
+                            @foreach($schedules as $schedule)
+                            <h3>{{$loop->iteration}}</h3>
+                            @if($loop->iteration %2 == 0)
+                            <li class="timeline-inverted">
+                                @else
+                                <li>
+                                    @endif
+                                    <div class="timeline-image">
+                                        <img class="img-circle img-responsive" src="/img/about/1.jpg" alt="">
+                                    </div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4>วันที่ {{ $schedule->schedule_day }} เวลา {{ $schedule->schedule_time }}</h4>
+                                            <h4 class="subheading">{{ $schedule->schedule_place }}</h4>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p class="text-muted">{{ $schedule->schedule_description }}</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                @endforeach
+
+
+                                <li class="timeline-inverted">
+                                    <div class="timeline-image">
+                                        <h4>Booking
+                                            <br><br>Now!
+                                        </h4>
+                                    </div>
+                                </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <br><br>
+
+                <!--<ul class="list-inline">
+                                    <li>Travel Agency: abc company</li>
+                                    <li>Date: ?วัน ?คืน</li>
+                                    <li>Cost: ? baht</li>
+                                </ul>-->
+                <!-- ADD table round -->
+
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <ul class="list-inline">
+                            <table class="table">
+                                <tr>
+                                    <th>รอบวันที่</th>
+                                    <th>ราคาผู้ใหญ่</th>
+                                    <th>ราคาเด็ก</th>
+                                    <th>จำนวนที่ว่าง</th>
+                                </tr>
+                                <!-- edit add loop select for db -->
+                                @foreach($triprounds as $tripround)
+                                <tr>
+                                    <td>{{ $tripround->start_date }}</td>
+                                    <td>{{$tripround->price_adult}}</td>
+                                    <td>{{$tripround->price_child}}</td>
+                                    <td>{{$tripround->amount_seats}}</td>
+                                </tr>
+                                @endforeach
+                            </table>
+                            <!-- end loop -->
+                        </ul>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+
+                <a class="btn btn-primary" href={{ url( '/search') }}>  <i class="fa fa-times"></i> Close This</a>
             </div>
-            <a href="/bookingsum">
-                <button type="button" class="btn btn-primary" data-dismiss="modal" href={{url( '/bookingsum')}}>  จองตอนนี้</button>
-                </a>
         </div>
     </div>
 </div>
+
 
 
 
@@ -102,9 +135,4 @@
 
 <!-- Theme JavaScript -->
 <script src="js/agency.min.js"></script>
-
-</body>
-
-</html>
-
-@endsection('content')
+@endsection 
