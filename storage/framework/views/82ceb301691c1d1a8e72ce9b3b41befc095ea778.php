@@ -22,41 +22,33 @@
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
                     <ul class="list-inline">
-                        <table class="table">
-                            <tr>
-                                <th>รอบวันที่</th>
-                                <th>จำนวนผู้ใหญ่</th>
-                                <th>จำนวนเด็ก</th>
-                                <th>จำนวนที่ว่าง</th>
-                            </tr>
-                            <!-- edit add loop select for db -->
+                    <script>
+                        var a =  <?php echo e($triprounds->amount_seats); ?>
 
-                            
-                            <tr>
-                                <td>
-                                     
-                                        <?php echo e($triprounds->start_date); ?> - <?php echo e($triprounds->departure_date); ?>
+                        console.log("a:",a);
+                    </script>   
+                    <form >                           
+                                รอบวันที่ <?php echo e($triprounds->start_date); ?> - <?php echo e($triprounds->departure_date); ?>  
 
-                                       
-                                </td>
-
-                                <td>
+                            <br>
                                     จำนวนเด็ก 
-                                </td>
+                                    <input type ="number" name="number_children"  min="0" max="<?php echo e($triprounds->amount_seats); ?>">
+                                    ราคา :: <?php echo e($triprounds->price_child); ?>
 
-                                <td>
-                                   จำนวนผู้ใหญ่
-                                </td>
-
-                                <td>
-                                     <?php echo e($triprounds->amount_seats); ?>
-
-                                </td>
+                                    
+                            <br>
+                                   จำนวนผู้ใหญ่<input type ="number" name="number_adults"  min="0" max="<?php echo e($triprounds->amount_seats); ?>">
+                                ราคา :: <?php echo e($triprounds->price_adult); ?>
 
 
-                            </tr>
-                        </table>
-                        <!-- end loop -->
+                                จำนวนที่นั้งทั้งหมด ::   <?php echo e($triprounds->amount_seats); ?>
+
+                                เว้น <?php echo e($booking[0]->number_booking); ?>
+
+
+
+
+    </form>                      
                     </ul>
                 </div>
                 <div class="col-md-3"></div>

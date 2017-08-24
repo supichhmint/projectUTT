@@ -22,39 +22,28 @@
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
                     <ul class="list-inline">
-                        <table class="table">
-                            <tr>
-                                <th>รอบวันที่</th>
-                                <th>จำนวนผู้ใหญ่</th>
-                                <th>จำนวนเด็ก</th>
-                                <th>จำนวนที่ว่าง</th>
-                            </tr>
-                            <!-- edit add loop select for db -->
+                    <script>
+                        var a =  {{$triprounds->amount_seats}}
+                        console.log("a:",a);
+                    </script>   
+                    <form >                           
+                                รอบวันที่ {{$triprounds->start_date}} - {{$triprounds->departure_date}}  
 
-                            
-                            <tr>
-                                <td>
-                                     
-                                        {{$triprounds->start_date}} - {{$triprounds->departure_date}}
-                                       
-                                </td>
-
-                                <td>
+                            <br>
                                     จำนวนเด็ก 
-                                </td>
+                                    <input type ="number" name="number_children"  min="0" max="{{$triprounds->amount_seats}}">
+                                    ราคา :: {{$triprounds->price_child}}
+                                    
+                            <br>
+                                   จำนวนผู้ใหญ่<input type ="number" name="number_adults"  min="0" max="{{$triprounds->amount_seats}}">
+                                ราคา :: {{$triprounds->price_adult}}
 
-                                <td>
-                                   จำนวนผู้ใหญ่
-                                </td>
-
-                                <td>
-                                     {{$triprounds->amount_seats}}
-                                </td>
+                                จำนวนที่นั้งทั้งหมด ::   {{$triprounds->amount_seats}}
+                                เว้น {{$booking[0]->number_booking}}
 
 
-                            </tr>
-                        </table>
-                        <!-- end loop -->
+
+    </form>                      
                     </ul>
                 </div>
                 <div class="col-md-3"></div>
