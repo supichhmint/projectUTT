@@ -1,5 +1,6 @@
  <?php $__env->startSection('title', 'Summary Booking'); ?> <?php $__env->startSection('content'); ?>
 <style>
+    
     .invoice-box {
         max-width: 800px;
         margin: auto;
@@ -176,25 +177,27 @@
 
     </div><br><br>
     <div style='text-align:center'>
-        <button type="button" class="btn btn-success">ยืนยัน</button>
-        <button type="button" class="btn btn-danger">ยกเลิก</button>
+        
+        
         <form name="checkoutForm" method="POST" action="/charge">
     <input type="hidden" name="description" value="Product order ฿3200.00" />
     
     <?php echo e(csrf_field()); ?>
 
 
-    <script type="text/javascript" src="https://cdn.omise.co/card.js"               
+    
+    <script type="text/javascript"  src="https://cdn.omise.co/card.js"               
       data-key="pkey_test_58x5lew98sd34rjio0a"
       data-image="http://www.mx7.com/view2/A2ElRcLZ5FAr6dEv"
       data-frame-label="UP to Train" 
-      data-button-label="ซื้อเลยจ้า" 
+      data-button-label ="ซื้อเลยจ้า" 
       data-submit-label="Submit" 
       data-location="yes" 
       data-amount="320000"
       data-currency="thb"
       >
     </script>
+    
     <!--the script will render <input type="hidden" name="omiseToken"> for you automatically-->
   </form>
     </div>
