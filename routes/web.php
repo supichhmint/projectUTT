@@ -14,20 +14,15 @@ Route::get('/', function()
 {
 	return redirect('home');
 });
+Route::get('/',function(){
+	return view::make('home');
+});
+
 Route::get('/login', function()
 {
 	return View::make('login');
 });
 
-Route::get('/documentation', function()
-{
-	return View::make('documentation');
-});
-
-Route::get('/app', function()
-{
-	return View::make('app');
-});
 
 Route::get('/addTrip', function()
 {
@@ -37,10 +32,7 @@ Route::get('/headlogo', function()
 {
 	return View::make('/headlogo');
 });
-Route::get('/dashboard', function()
-{
-	return view('/dashboard');
-});
+
 
 Auth::routes();
 
@@ -48,7 +40,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 Route::resource('/agency', 'showtripController');
 
-//Route::get('/addtripround', 'tripController@add_tripRound');
 
 Route::resource('/addtrip','addtripController');
 Route::resource('/show','showtripController');
