@@ -20,6 +20,7 @@ class UserController extends Controller
     }
     
     function schedule($id){
+  
         $schedules = schedules::where('trip_id',$id)->get();
         $triprounds = tripround::where('trip_id',$id)->get();
         $trip = trip::where('id',$id)->first();

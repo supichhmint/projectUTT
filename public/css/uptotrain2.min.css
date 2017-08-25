@@ -15,7 +15,7 @@
 
 body {
     overflow-x: hidden;
-    font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Roboto Slab", "Prompt", Helvetica, Arial, sans-serif;
     webkit-tap-highlight-color: #fed136
 }
 
@@ -27,7 +27,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Prompt", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 700
 }
@@ -528,7 +528,7 @@ footer ul.quicklinks {
     bottom: 0;
     position: absolute;
     content: "";
-    width: 2px;
+    width: 5px;
     background-color: #f1f1f1;
     left: 40px;
     margin-left: -1.5px

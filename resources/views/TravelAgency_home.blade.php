@@ -124,6 +124,11 @@
                                     <!-- Table -->
                                     <table class="table">
                                         <!--problem ตรงนี้ไม่รัน -->
+                                          <?php
+                                            $tripagent = DB::table('travelagency')->where('id', $tripuser->travelagency_id)->first();
+                                            
+                                            $tripround = DB::table('triprounds')->where('trip_id', $tripuser->id)->get();
+                                            ?>
                                         @foreach($tripround as $tr)
                                         <tr>
                                         <td color:lightblue>รอบ</td>
