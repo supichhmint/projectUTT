@@ -15,7 +15,7 @@ Route::get('/', function()
 	return redirect('home');
 });
 Route::get('/',function(){
-	return view::make('home');
+	return view::make('/home');
 });
 
 Route::get('/login', function()
