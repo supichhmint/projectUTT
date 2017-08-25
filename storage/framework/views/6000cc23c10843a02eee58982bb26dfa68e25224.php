@@ -91,17 +91,6 @@
                             <h1 class="page-header">ทริปทั้งหมด</h1>
                         </div>
                     </div>
-                    <!--<div class="col-md-4">
-               <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4><i class="glyphicon glyphicon-plus"></i>ADD TRIP </h4>
-                    </div>
-                    <div class="panel-body">
-                        <a href="/addtrip"><img class="img-responsive img-portfolio img-hover " src="pic/ADD1.png" alt=""></a>
-                    </div>
-                </div>
-            </div>-->
-
                     <div class="container">
                         <?php $__currentLoopData = $trips; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tripuser): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <div class="col-md-4">
@@ -150,16 +139,6 @@
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </div>
 
-
-                    <!-- Marketing Icons Section -->
-
-
-
-
-
-
-
-
                     <!-- Page Content -->
                     <div class="container">
 
@@ -205,18 +184,6 @@
 
                         </div>
                         <hr>
-
-                        <!-- Footer 
-                <footer>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <p>Copyright &copy; Your Website 2014</p>
-                        </div>
-                    </div>
-                </footer>
-
-            </div>
-            <!-- /.container -->
 
                         <!-- jQuery -->
                         <script src="js/jquery.js"></script>
