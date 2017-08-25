@@ -1,4 +1,4 @@
-@extends('layouts.headuser') @section('title', 'Summary Booking') @section('content')
+ <?php $__env->startSection('title', 'Summary Booking'); ?> <?php $__env->startSection('content'); ?>
 <style>
     .invoice-box {
         max-width: 800px;
@@ -64,7 +64,7 @@
         font-weight: bold;
     }
 
-    @media only screen and (max-width: 600px) {
+    @media  only screen and (max-width: 600px) {
         .invoice-box table tr.top table td {
             width: 100%;
             display: block;
@@ -181,7 +181,8 @@
         <form name="checkoutForm" method="POST" action="/charge">
     <input type="hidden" name="description" value="Product order ฿3200.00" />
     
-    {{ csrf_field() }}
+    <?php echo e(csrf_field()); ?>
+
 
     <script type="text/javascript" src="https://cdn.omise.co/card.js"               
       data-key="pkey_test_58x5lew98sd34rjio0a"
@@ -199,4 +200,5 @@
     </div>
 </div>
 </div>
-@endsection('content')
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.headuser', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

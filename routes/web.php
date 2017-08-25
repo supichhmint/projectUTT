@@ -99,3 +99,30 @@ Route::get('/regisuser',function(){
 	return view ('regis_user');
 });
 
+Route::get('/regisuser',function(){
+	return view ('regis_user');
+});
+
+Route::get('/charge', function () {
+	return view ('omisecard');
+});
+Route::post('/charge','OmiseController@checkout');
+
+Route::get('/card', function () {
+	return view ('card');
+});
+Route::post('/card', 'OmiseController@checkout');
+
+
+
+
+Route::get('/bookingsum', function () {
+	return view ('bookingsum');
+});
+
+Route::get('/test', function () {
+	return view ('1test');
+});
+Route::post('/test','OmiseController@checkout');
+
+
