@@ -125,6 +125,14 @@
                                     <!-- Table -->
                                     <table class="table">
                                         <!--problem ตรงนี้ไม่รัน -->
+                                        
+                                            <?php
+                                            $tripagent = DB::table('travelagency')->where('id', $tripuser->travelagency_id)->first();
+                                            
+                                            $tripround = DB::table('triprounds')->where('trip_id', $tripuser->id)->get();
+                                            ?>
+
+                                    
                                         <?php $__currentLoopData = $tripround; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tr): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <tr>
                                         <td color:lightblue>รอบ</td>

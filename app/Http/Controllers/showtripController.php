@@ -18,7 +18,7 @@ class showtripController extends Controller
     {
 
         $trips = DB::table('trips')->get();
-        $tripround =DB::table('triprounds')->join('trips','trips.id','=','triprounds.trip_id')->get();
+        $tripround =DB::table('triprounds')->join('trips','triprounds.trip_id','=','trips.id')->get();
         $travelagency =DB::table('travelagency')->get();
         $data=array(
             'trips' =>$trips,
