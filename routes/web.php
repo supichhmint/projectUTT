@@ -12,10 +12,10 @@
 */
 Route::get('/', function()
 {
-	return redirect('home');
+	return redirect('index');
 });
 Route::get('/',function(){
-	return view::make('/home');
+	return view::make('/index');
 });
 
 Route::get('/login', function()
@@ -37,7 +37,7 @@ Route::get('/headlogo', function()
 Auth::routes();
 
 
-Route::get('/home', 'HomeController@index');
+
 Route::resource('/agency', 'showtripController');
 
 

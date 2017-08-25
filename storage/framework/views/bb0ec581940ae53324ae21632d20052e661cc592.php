@@ -7,13 +7,10 @@
     <div class="container" align="center">
         <!-- search panel -->
         <div class="newsletter">
-            
                 <h3 class="agileits-title" style="margin-bottom:0px;">Agreement</h3>
-            
         </div>
     </div>
 </div>
-<!-- //banner-text -->
 <div class="agile_menu" id="menu">
 	<div class="container">
       <div class="menu_w3ls_agile_top_section">
@@ -118,4 +115,4 @@
 
 
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.headindex', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layouts.agency', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
