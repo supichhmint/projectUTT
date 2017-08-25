@@ -8,7 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html lang="en">
 
 <head>
-  <title>Up To train - @yield('title')</title>
+  <title>Up To train - <?php echo $__env->yieldContent('title'); ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="keywords" content="Holiday Spot Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -94,7 +94,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 
-  @yield('agency_banner')
+  <?php echo $__env->yieldContent('agency_banner'); ?>
  
   <!-- footer start here -->
   <div class="footer-agile" style="padding-top:20px;padding-bottom:20px;">

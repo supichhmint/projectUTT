@@ -1,4 +1,5 @@
  
+<?php $__env->startSection('title', 'Search Trip'); ?> 
 <?php $__env->startSection('content'); ?>
 
 <!-- newedit About Section -->

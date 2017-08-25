@@ -1,4 +1,5 @@
 @extends('layouts.layout') 
+@section('title', 'Search Trip') 
 @section('content')
 
 <!-- newedit About Section -->

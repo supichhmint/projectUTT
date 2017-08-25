@@ -1,11 +1,21 @@
  
 <?php $__env->startSection('title', 'agreement'); ?> 
+
 <?php $__env->startSection('content'); ?>
 
+<div class="welcome about" style="padding-top:0px;padding-bottom:0px;">
+    <div class="container" align="center">
+        <!-- search panel -->
+        <div class="newsletter">
+            
+                <h3 class="agileits-title" style="margin-bottom:0px;">Agreement</h3>
+            
+        </div>
+    </div>
+</div>
 <!-- //banner-text -->
-<div class="welcome" style="padding-top: 100px;">
-  <div class="agile_menu" id="menu">
-    <div class="container">
+<div class="agile_menu" id="menu">
+	<div class="container">
       <div class="menu_w3ls_agile_top_section">
         <div class="ziehharmonika">
           <h3>หมวดที่ 1 เรื่องการติดต่อสื่อสาร</h3>

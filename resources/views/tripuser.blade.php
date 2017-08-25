@@ -36,14 +36,9 @@
                 <div class="product-listy">
                     <h2>All trips</h2>
                     <ul class="product-list">
-                        <li><a href="">New Products</a></li>
-                        <li><a href="">Old Products</a></li>
-                        <li><a href="">T-shirts</a></li>
-                        <li><a href="">pants</a></li>
-                        <li><a href="">Dress</a></li>
-                        <li><a href="">Shorts</a></li>
-                        <li><a href="#">Shirts</a></li>
-                        <li><a href="register.html">Register</a></li>
+                        <li><a href="">New Trips</a></li>
+                        <li><a href="">Available Tour</a></li>
+                        <li><a href="">Hot Price</a></li>
                     </ul>
                 </div>
                 <div class="tags">

@@ -2,9 +2,6 @@
 @section('title', 'Add Trip') 
 @section('content')
 <div class="container">
-    <header2>
-        <h2>Add Trip</h2>
-    </header2>
     <div class="row">
         <div class="wizard">
             <div class="wizard-inner">
@@ -407,10 +404,6 @@
         interval: 5000 //changes the speed
     })
 </script>
-
-</body>
-
-</html>
 <!-- jQuery -->
 <script src="js/jquery.js"></script>
 
@@ -460,7 +453,3 @@
     }
 </script>
 @endsection
-
-</body>
-
-</html>
