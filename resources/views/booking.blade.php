@@ -1,7 +1,6 @@
 @extends('layouts.headindex') 
 @section('title', 'booking') 
 @section('content')
-
 <div align="right">
     <button type="button" class="btn btn-default btn-lg">
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Close
@@ -17,9 +16,7 @@
             <p>ระยะเวลา {{ $trip->trip_nday }} วัน {{ $trip->trip_nnight }} คืน</p>
             <img class="img-responsive img-centered" src="/img/portfolio/trip1_00.jpg" alt="">
             <p>{{$trip->trip_description}}</p>
-
             <br><br>
-
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
@@ -104,19 +101,11 @@
                     </div>
                     <div class="col-md-3"></div>
                 </div>
-
                 <a class="btn btn-primary" href={{ url( '/search') }}>  <i class="fa fa-times"></i> Close This</a>
             </div>
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
 <!--</section>-->
 
 <!-- jQuery -->

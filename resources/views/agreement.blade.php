@@ -1,4 +1,4 @@
-@extends('layouts.agency') 
+@extends('layouts.headindex') 
 @section('title', 'agreement') 
 
 @section('content')

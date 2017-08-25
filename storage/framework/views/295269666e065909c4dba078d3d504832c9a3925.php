@@ -17,7 +17,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     addEventListener("load", function () {
       setTimeout(hideURLbar, 0);
     }, false);
-
     function hideURLbar() {
       window.scrollTo(0, 1);
     }
@@ -72,7 +71,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </li>
             <li class="">
               <a href="/_member/reservation/th">
-						เพิ่มทริป					  </a>
+						ข้อมูลการจอง					  </a>
             </li>
             <li class="">
               <a href="/_member/report/th">
@@ -88,7 +87,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       </div>
     </div>
   </header>
-
 
   <!-- //header-->
 

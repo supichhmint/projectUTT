@@ -50,45 +50,50 @@
                     </li>
                 </ul>
             </div>
+            <script>
+            
+            </script>
             <form role="form" action="/agency" method="POST" name="id">
+            
                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                 <div class="tab-content">
                     <div class="tab-pane active" role="tabpanel" id="step1">
                         <h3><strong>Step 1 </strong> - Basic Information</h3>
+                        <ul class="errorMessages"></ul>
                         <div class="step1">
                             <div class="row">
-                                <div class="col-md-6">
-                                    <label for="exampleInputEmail1">Trip Name</label>
-                                    <input type="text" class="form-control" name="trips_name" id="tripName" placeholder="Trip Name" onChange="myTripname()">
+                                <div class="col-md-6" style="padding-top:20px;padding-bottom:20px;">
+                                    <label for="tripName" style="margin-bottom:13px;">Trip Name</label>
+                                    <input type="text" class="form-control" name="trips_name" id="tripName" placeholder="Trip Name" onChange="myTripname()" required>
                                 </div>
-                                <div class="col-md-2">
-                                    <label for="exampleInputEmail1">Day(s)</label>
-                                    <input type="text" class="form-control" name="trip_nday" id="tripDay" placeholder="Day(s)" onChange="myTripDay()">
+                                <div class="col-md-2" style="padding-top:20px;padding-bottom:20px;">
+                                    <label for="tripDay" style="margin-bottom:13px;">Day(s)</label>
+                                    <input type="text" class="form-control" name="trip_nday" id="tripDay" placeholder="Day(s)" onChange="myTripDay()" required>
                                 </div>
-                                <div class="col-md-2">
-                                    <label for="exampleInputEmail1">Night(s)</label>
-                                    <input type="text" class="form-control" name="trip_nnight" id="tripNight" placeholder="Night(s)" onChange="myTripnight()">
+                                <div class="col-md-2" style="padding-top:20px;padding-bottom:20px;">
+                                    <label for="tripNight" style="margin-bottom:13px;">Night(s)</label>
+                                    <input type="text" class="form-control" name="trip_nnight" id="tripNight" placeholder="Night(s)" onChange="myTripnight()" required>
                                 </div>
-                                <div class="col-md-2">
-                                    <label for="exampleInputEmail1">Meal(s)</label>
-                                    <input type="text" class="form-control" name="trip_meal" id="tripMeal" placeholder="Meal(s)" onChange="myTripmeal()">
+                                <div class="col-md-2" style="padding-top:20px;padding-bottom:20px;">
+                                    <label for="tripMeal" style="margin-bottom:13px;">Meal(s)</label>
+                                    <input type="text" class="form-control" name="trip_meal" id="tripMeal" placeholder="Meal(s)" onChange="myTripmeal()" required>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-6">
-                                    <label for="exampleInputEmail1">Description</label>
+                                <div class="col-lg-6" style="padding-bottom:20px;">
+                                    <label for="tripdescription" style="margin-bottom:13px;">Description</label>
                                     <textarea rows="5" cols="10" class="form-control" name="trip_description" id="tripdescription" required data-validation-required-message="Please enter your description"
                                         maxlength="999" style="resize:none" onChange="myTripdescription()"></textarea>
                                 </div>
 
-                                <div class="col-md-3">
-                                    <label for="exampleInputEmail1">Province</label>
-                                    <input type="text" class="form-control" name="trip_province" id="tripPro" placeholder="จังหวัด" onChange="myTrippro()">
+                                <div class="col-md-3" style="padding-bottom:20px;">
+                                    <label for="tripPro" style="margin-bottom:13px;">Province</label>
+                                    <input type="text" class="form-control" name="trip_province" id="tripPro" placeholder="จังหวัด" onChange="myTrippro()" required>
                                 </div>
                             </div>
                         </div>
                         <ul class="list-inline pull-right">
-                            <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
+                            <li><button type="submit" class="btn btn-primary next-step">Save and continue</button></li>
                         </ul>
                     </div>
                     <div class="tab-pane" role="tabpanel" id="step2">
@@ -96,13 +101,13 @@
                         <div class="step2">
                             <div class="row" id='controls'>
                                 <div class="col-md-3">
-                                    <label>วันเริ่มเดินทาง</label>
-                                    <input class="form-control start_day" name="start_date[]" type="date" oninvalid="this.setCustomValidity('กรุณากรอกวันเริ่มเดินทาง')"
-                                        oninput="setCustomValidity('')" placeholder="วันเริ่มเดินทาง" onChange="myStartdate()">
+                                    <label for="sday">วันเริ่มเดินทาง</label>
+                                    <input class="form-control start_day" name="start_date[]" id="sday"type="date" oninvalid="this.setCustomValidity('กรุณากรอกวันเริ่มเดินทาง')"
+                                        placeholder="วันเริ่มเดินทาง" onChange="myStartdate()">
                                 </div>
                                 <div class="col-md-3">
-                                    <label>วันสิ้นสุดการเดินทาง</label>
-                                    <input class="form-control Departure_Date" name="departure_date[]" type="date" oninvalid="this.setCustomValidity('กรุณากรอกวันสิ้นสุดการเดินทาง')"
+                                    <label for="eday">วันสิ้นสุดการเดินทาง</label>
+                                    <input class="form-control Departure_Date" name="departure_date[]" type="date" id="eday" oninvalid="this.setCustomValidity('กรุณากรอกวันสิ้นสุดการเดินทาง')"
                                         oninput="setCustomValidity('')" placeholder="วันสิ้นสุดการเดินทาง" onChange="myDepardate()">
                                 </div>
                                 <div class="col-md-2">
@@ -172,8 +177,8 @@
                         <p>You have successfully completed all steps.</p>
 
                         <table class="table">
-                            <tr>
-                                <td> ชื่อทริป : </td>
+                            <tr >
+                                <td style="width:100px;"> ชื่อทริป : </td>
                                 <td id="name"></td>
                             </tr>
                             <tr>
@@ -258,6 +263,31 @@
         </div>
     </div>
 </div>
+<script>
+    var createAllErrors = function() {
+        var form = $( this ),
+            errorList = $( "ul.errorMessages", form );
+
+        var showAllErrorMessages = function() {
+            errorList.empty();
+
+            // Find all invalid fields within the form.
+            var invalidFields = form.find( ":invalid" ).each( function( index, node ) {
+
+                // Find the field's corresponding label
+                var label = $( "label[for=" + node.id + "] "),
+                    // Opera incorrectly does not fill the validationMessage property.
+                    message = node.validationMessage || 'Invalid value.';
+
+                errorList
+                    .show()
+                    .append( "<li><span>" + label.html() + "</span> " + message + "</li>" );
+            });
+        };
+    };
+    
+    $( "form" ).each( createAllErrors );
+</script>
 <script>
     function myTripname() {
         var x = document.getElementById("tripName").value;
