@@ -72,7 +72,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </li>
             <li class="">
               <a href="/_member/reservation/th">
-						ข้อมูลการจอง					  </a>
+						เพิ่มทริป					  </a>
             </li>
             <li class="">
               <a href="/_member/report/th">
@@ -95,13 +95,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
   @yield('agency_banner')
- 
+ @yield('content')
   <!-- footer start here -->
   <div class="footer-agile" style="padding-top:20px;padding-bottom:20px;">
     <div class="container">
       <div class="footer-agileinfo">
         <div class="copy-right">
-          <p>© 2017 Holiday Spot . All rights reserved | Design by <a href="http://w3layouts.com/" target="_blank"> Winnie secret</a></p>
+          <p>© UP TO TRAIN . All rights reserved | Design by <a href="http://w3layouts.com/" target="_blank"> Winnie secret</a></p>
         </div>
       </div>
     </div>

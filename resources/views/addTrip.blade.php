@@ -1,6 +1,20 @@
-@extends('layouts.headlogo') 
+@extends('layouts.agency') 
 @section('title', 'Add Trip') 
+@section('agency_banner')
+<div class="welcome about" style="padding-top:0px;padding-bottom:0px;">
+    <div class="container" align="center">
+        <!-- search panel -->
+        <div class="newsletter" style="padding-bottom:0px;height:79px">
+            <div class="container">
+                <h3 class="agileits-title">Add Trip</h3>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
 @section('content')
+  <link href="css/uptotrain.min.css" rel="stylesheet">
+  <link href="css/login.css" rel="stylesheet">
 <div class="container">
     <div class="row">
         <div class="wizard">

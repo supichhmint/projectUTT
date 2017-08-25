@@ -1,6 +1,20 @@
  
 <?php $__env->startSection('title', 'Add Trip'); ?> 
+<?php $__env->startSection('agency_banner'); ?>
+<div class="welcome about" style="padding-top:0px;padding-bottom:0px;">
+    <div class="container" align="center">
+        <!-- search panel -->
+        <div class="newsletter" style="padding-bottom:0px;height:79px">
+            <div class="container">
+                <h3 class="agileits-title">Add Trip</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
+  <link href="css/uptotrain.min.css" rel="stylesheet">
+  <link href="css/login.css" rel="stylesheet">
 <div class="container">
     <div class="row">
         <div class="wizard">
@@ -453,4 +467,4 @@
     }
 </script>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.headlogo', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layouts.agency', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
