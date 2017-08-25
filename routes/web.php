@@ -12,7 +12,7 @@
 */
 Route::get('/', function()
 {
-	return View::make('index');
+	return redirect('home');
 });
 Route::get('/login', function()
 {
@@ -43,9 +43,7 @@ Route::get('/dashboard', function()
 });
 
 Auth::routes();
-Route::get('/', function() {
-	return redirect('home');
-});
+
 
 Route::get('/home', 'HomeController@index');
 Route::resource('/agency', 'showtripController');
