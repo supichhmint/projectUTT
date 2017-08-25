@@ -1,127 +1,97 @@
-@extends('layouts.headindex') 
+@extends('layouts.agency') 
 @section('title', 'booking') 
 @section('content')
-<div align="right">
-    <button type="button" class="btn btn-default btn-lg">
-                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Close
-            </button>
-</div>
-<!--<div class="container">-->
-<div class="container" id="about" align="center">
-    <div class="row">
-        <div class="modal-body">
-            <!-- Project Details Go Here -->
-            <h2>{{ $trip->trips_name }}</h2>
-            <!--<p class="item-intro text-muted">จังหวัด<br>โดย "$บริษัททัวร์"</p>-->
-            <p>ระยะเวลา {{ $trip->trip_nday }} วัน {{ $trip->trip_nnight }} คืน</p>
-            <img class="img-responsive img-centered" src="/img/portfolio/trip1_00.jpg" alt="">
-            <p>{{$trip->trip_description}}</p>
-            <br><br>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h2 class="section-heading">Schedule</h2>
-                        <h3 class="section-subheading text-muted">" ไปไหนบ้างนะ "</h3>
 
-                    </div>
-                </div>
+<div class="welcome about">
 
-                <div class="row">
-                    <div class="col-lg-12">
-
-                        <ul class="timeline">
-                            <!--ถ้าเลขคู่ ตรง li จะเพิ่ม class='timeline-inverted'-->
-                            @foreach($schedules as $schedule)
-                            <h3>{{$loop->iteration}}</h3>
-                            @if($loop->iteration %2 == 0)
-                            <li class="timeline-inverted">
-                                @else
-                                <li>
-                                    @endif
-                                    <div class="timeline-image">
-                                        <img class="img-circle img-responsive" src="/img/about/1.jpg" alt="">
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4>วันที่ {{ $schedule->schedule_day }} เวลา {{ $schedule->schedule_time }}</h4>
-                                            <h4 class="subheading">{{ $schedule->schedule_place }}</h4>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p class="text-muted">{{ $schedule->schedule_description }}</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                @endforeach
-
-
-                                <li class="timeline-inverted">
-                                    <div class="timeline-image">
-                                        <h4>Booking
-                                            <br><br>Now!
-                                        </h4>
-                                    </div>
-                                </li>
-                        </ul>
-                    </div>
-
-                </div>
-
-                <br><br>
-
-                <!--<ul class="list-inline">
-                                    <li>Travel Agency: abc company</li>
-                                    <li>Date: ?วัน ?คืน</li>
-                                    <li>Cost: ? baht</li>
-                                </ul>-->
-                <!-- ADD table round -->
-
-                <div class="row">
-                    <div class="col-md-3"></div>
-                    <div class="col-md-6">
-                        <ul class="list-inline">
-                            <table class="table">
-                                <tr>
-                                    <th>รอบวันที่</th>
-                                    <th>ราคาผู้ใหญ่</th>
-                                    <th>ราคาเด็ก</th>
-                                    <th>จำนวนที่ว่าง</th>
-                                </tr>
-                                <!-- edit add loop select for db -->
-                                @foreach($triprounds as $tripround)
-                                <tr>
-                                    <td>{{ $tripround->start_date }}</td>
-                                    <td>{{$tripround->price_adult}}</td>
-                                    <td>{{$tripround->price_child}}</td>
-                                    <td>{{$tripround->amount_seats}}</td>
-                                </tr>
-                                @endforeach
-                            </table>
-                            <!-- end loop -->
-                        </ul>
-                    </div>
-                    <div class="col-md-3"></div>
-                </div>
-                <a class="btn btn-primary" href={{ url( '/search') }}>  <i class="fa fa-times"></i> Close This</a>
+    <div class="container" align="center">
+        <div class="row">
+        @foreach($trip as $trips)
+            <div>
+                <h2>{{$trips->trips_name}}</h2>
+                <h5>{{$trips->trip_nday}}วัน {{$trips->trip_nnight}}คืน</h5>
+                <p>จังหวัด{{$trips->trip_province}}</p>
+                <p>{{$trips->trip_meal}}มื้อ</p>
+                <img class="img-responsive img-centered" src="/img/portfolio/trip1_00.jpg" alt="">
+                <p></p>
             </div>
+            @endforeach
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <ul class="list-inline">
+                   
+                   
+                    <?php
+                    if($count == 0){
+                        $sum = $triprounds->amount_seats;
+                    }
+                    else if($count > 0 ){
+                        $amount =  $triprounds->amount_seats;
+                        $nbooking  = $bookings[0]->number_booking;
+                        $sum = $amount-$nbooking;
+                    }   
+                    ?>   
+                    <form>                           
+                                รอบวันที่ {{$triprounds->start_date}} - {{$triprounds->departure_date}}  
+                            <br>
+                                    จำนวนเด็ก 
+                   <input type ="number" name="number_children" id="number_children" min="0" max={{$sum}} onchange="myChildren()" onclick="mySummy()" >
+                                    ราคา :: {{$triprounds->price_child}}
+                                    ยอดรวมเด็ก<p id="pchild"></p>
+                            <br>
+                            
+                            
+                                   จำนวนผู้ใหญ่ 
+                                   <input type ="number" name="number_adults" id="number_adults"  min="0" max={{$sum}} onchange="myAdult()" onclick="mySummy()" >
+                                    ราคา :: {{$triprounds->price_adult}}
+                                    ยอดรวมผู้ใหญ่ <p id="padult"></p>
+
+                                  สถานะการจอง  <p id="summary" ></p>
+
+                                    ที่นั่งว่าง :: {{$sum}}   /จำนวนที่นั้งทั้งหมด ::   
+                                    {{$triprounds->amount_seats}}
+                                    
+    </form>                      
+                    </ul>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            
+            <a href="/bookingsum">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" href={{url( '/bookingsum')}}>  <i class="fa fa-bookmark"></i> จองตอนนี้</button>
+                </a>
         </div>
     </div>
 </div>
-<!--</section>-->
+<script>
+function myChildren() {
+    var x = document.getElementById("number_children").value;
+    var y = {{$triprounds->price_child}};
+    document.getElementById("pchild").innerHTML =  "ราคารวมเด็กทั้งหมด"+(x*y);
+}
+function myAdult() {
+    var x = document.getElementById("number_adults").value;
+    var y = {{$triprounds->price_adult}};
+    document.getElementById("padult").innerHTML = "ราคารวมผู้ใหญ่ทั้งหมด"+ (x*y);
+}
+function mySummy(){
+    var a = document.getElementById("number_children").value;
+    var b = document.getElementById("number_adults").value;
+    var c = {{$triprounds->price_adult}};
+    var d = {{$triprounds->price_child}};
+    var nsum = ((a*d)+(b*c));
+    var e = {{$triprounds->amount_seats}};
+    
+    var np = (a+b); 
+    if(np>e){
+        document.getElementById("summary").innerHTML="กรุณากรอกจำนวนคนเกิน";
+    }
+    else if(np<=e){
+        document.getElementById("summary").innerHTML="ราคารวมทั้งหมด"+nsum+"<br>"+"จำนวนคนทั้งหมด"+np+"<br>"+"OK";
+    }
+    
+}
+</script>
 
-<!-- jQuery -->
-<script src="vendor/jquery/jquery.min.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-<!-- Plugin JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" integrity="sha384-mE6eXfrb8jxl0rzJDBRanYqgBxtJ6Unn4/1F7q4xRRyIw7Vdg9jP4ycT7x1iVsgb"
-    crossorigin="anonymous"></script>
-
-<!-- Contact Form JavaScript -->
-<script src="js/jqBootstrapValidation.js"></script>
-<script src="js/contact_me.js"></script>
-
-<!-- Theme JavaScript -->
-<script src="js/agency.min.js"></script>
-@endsection 
+@endsection

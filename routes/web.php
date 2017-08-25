@@ -12,11 +12,13 @@
 */
 Route::get('/', function()
 {
-	return redirect('index');
+	return View::make('index');
 });
-Route::get('/',function(){
-	return view::make('/index');
+Route::get('/', function()
+{
+	return redirect('home');
 });
+
 
 Route::get('/login', function()
 {
@@ -107,3 +109,19 @@ Route::post ( '/searcht', function () {
 		return view ( 'tripuser_resultsearch' )->withMessage ( 'No Details found. Try to search again !' );
 } );
 
+Route::get('/booking/{id}','UserController@booking');
+Route::get('/charge', function () {
+	return view ('omisecard');
+});
+Route::post('/charge','OmiseController@checkout');
+Route::get('/card', function () {
+	return view ('card');
+});
+Route::post('/card', 'OmiseController@checkout');
+Route::get('/test', function () {
+	return view ('1test');
+});
+Route::post('/test','OmiseController@checkout');
+Route::get('/bookingsum', function () {
+	return view ('bookingsum');
+});
