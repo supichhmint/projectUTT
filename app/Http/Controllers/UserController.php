@@ -38,10 +38,7 @@ class UserController extends Controller
         $count = $booking->count();
         $trip = DB::table('trips')->where('id',$fk)->get();
         $triprounds = tripround::where('id',$id)->first();
-<<<<<<< HEAD
 
-=======
->>>>>>> bc36f2b412cbc0229bfca0fb6d464786417f8745
         $data = array(
             'triprounds' => $triprounds,
             'trip' => $trip,
@@ -49,14 +46,7 @@ class UserController extends Controller
             'count' => $count
         );
         return view('booking', $data);
-<<<<<<< HEAD
-
     }
-
-    
-=======
-    }
->>>>>>> bc36f2b412cbc0229bfca0fb6d464786417f8745
     function login(){
         return view('login');
     }
