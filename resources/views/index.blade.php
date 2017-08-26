@@ -111,9 +111,7 @@
                     Source <span class="caret"></span>
                         </button>
                     <ul class="dropdown-menu">
-                        <!--@foreach ($trips as $station)
-    <li>{!! $station->station_name !!}</li>
-@endforeach-->
+                       
                     </ul>
                 </div>
 

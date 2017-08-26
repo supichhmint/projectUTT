@@ -10,10 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function()
-{
-	return View::make('index');
-});
+
 Route::get('/login', function()
 {
 	return View::make('login');
@@ -59,10 +56,6 @@ Route::resource('/trip','tripController');
 Route::post('/addtripround','addtriproundController@store');
 Route::resource('/completetrip','comptelttripController');
 Route::resource('/edittrip','addtripController');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/register', 'UserController@register');
 

@@ -111,9 +111,7 @@
                     Source <span class="caret"></span>
                         </button>
                     <ul class="dropdown-menu">
-                        <!--<?php $__currentLoopData = $trips; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $station): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-    <li><?php echo $station->station_name; ?></li>
-<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>-->
+                       
                     </ul>
                 </div>
 
