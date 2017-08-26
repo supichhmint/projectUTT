@@ -46,7 +46,6 @@ class UserController extends Controller
         );
         return view('booking', $data);
     }
-    
     function login(){
         return view('login');
     }

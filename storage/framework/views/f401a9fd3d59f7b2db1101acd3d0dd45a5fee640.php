@@ -121,6 +121,7 @@
                    
                    
                     <?php
+                    
                     if($count == 0){
                         $sum = $triprounds->amount_seats;
                     }
@@ -128,16 +129,21 @@
                         $amount =  $triprounds->amount_seats;
                         $nbooking  = $bookings[0]->number_booking;
                         $sum = $amount-$nbooking;
-                    }   
-                    ?>   
-                    <form>                           
+                    } 
+                        
+                    ?> 
+                  
+                      
+                    <form >                           
                                 รอบวันที่ <?php echo e($triprounds->start_date); ?> - <?php echo e($triprounds->departure_date); ?>  
+
                             <br>
                                     จำนวนเด็ก 
                    <input type ="number" name="number_children" id="number_children" min="0" max=<?php echo e($sum); ?> onchange="myChildren()" onclick="mySummy()" >
                                     ราคา :: <?php echo e($triprounds->price_child); ?>
 
                                     ยอดรวมเด็ก<p id="pchild"></p>
+                                    
                             <br>
                             
                             
@@ -149,8 +155,7 @@
 
                                   สถานะการจอง  <p id="summary" ></p>
 
-                                    ที่นั่งว่าง :: <?php echo e($sum); ?>   /จำนวนที่นั้งทั้งหมด ::   
-                                    <?php echo e($triprounds->amount_seats); ?>
+                                    ที่นั่งว่าง :: <?php echo e($sum); ?>   /จำนวนที่นั้งทั้งหมด ::   <?php echo e($triprounds->amount_seats); ?>
 
                                     
     </form>                      
@@ -165,34 +170,45 @@
         </div>
     </div>
 </div>
-</body>
+
+
+<div>===================================================</div>
 <script>
 function myChildren() {
     var x = document.getElementById("number_children").value;
     var y = <?php echo e($triprounds->price_child); ?>;
-    document.getElementById("pchild").innerHTML =  "ราคารวมเด็กทั้งหมด"+(x*y);
+    document.getElementById("pchild").innerHTML =  "ราคารวมเด็กทั้งหมด"+x*y;
 }
 function myAdult() {
     var x = document.getElementById("number_adults").value;
     var y = <?php echo e($triprounds->price_adult); ?>;
-    document.getElementById("padult").innerHTML = "ราคารวมผู้ใหญ่ทั้งหมด"+ (x*y);
+    document.getElementById("padult").innerHTML = "ราคารวมผู้ใหญ่ทั้งหมด"+ x*y;
 }
 function mySummy(){
     var a = document.getElementById("number_children").value;
     var b = document.getElementById("number_adults").value;
     var c = <?php echo e($triprounds->price_adult); ?>;
     var d = <?php echo e($triprounds->price_child); ?>;
-    var nsum = ((a*d)+(b*c));
+    var nsum = (a*d)+(b*c);
     var e = <?php echo e($triprounds->amount_seats); ?>;
-    
-    var np = (a+b); 
+    console.log(e);
+    var np = a+b; 
     if(np>e){
         document.getElementById("summary").innerHTML="กรุณากรอกจำนวนคนเกิน";
     }
-    else if(np<=e){
-        document.getElementById("summary").innerHTML="ราคารวมทั้งหมด"+nsum+"<br>"+"จำนวนคนทั้งหมด"+np+"<br>"+"OK";
+    else{
+        document.getElementById("summary").innerHTML=" ราคารวมทั้งหมด"+nsum+"จำนวนคนทั้งหมด"+np+"OK";
     }
     
 }
+</script>
+
+<!--</section>-->
+
+<!-- jQuery -->
+
+
+<!-- Plugin JavaScript -->
+
 </script>
 </html>
