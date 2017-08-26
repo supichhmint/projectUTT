@@ -14,9 +14,6 @@ Route::get('/', function()
 {
 	return View::make('index');
 });
-<<<<<<< HEAD
-
-=======
 Route::get('/', function()
 {
 	return redirect('home');
@@ -27,7 +24,7 @@ Route::get('/login', function()
 {
 	return View::make('login');
 });
->>>>>>> bc36f2b412cbc0229bfca0fb6d464786417f8745
+
 
 
 Route::get('/addTrip', function()
@@ -96,10 +93,6 @@ Route::get('/regisuser',function(){
 	return view ('regis_user');
 });
 
-<<<<<<< HEAD
-Route::get('/booking/{id}','UserController@booking');
-
-=======
 Route::get('/booking',function(){
 	return view ('booking');
 });
@@ -134,4 +127,4 @@ Route::post('/test','OmiseController@checkout');
 Route::get('/bookingsum', function () {
 	return view ('bookingsum');
 });
->>>>>>> bc36f2b412cbc0229bfca0fb6d464786417f8745
+

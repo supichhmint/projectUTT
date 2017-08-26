@@ -148,7 +148,7 @@
                             
                             
                                    จำนวนผู้ใหญ่ 
-                                   <input type ="number" name="number_adults" id="number_adults"  min="0" max={{$sum}}  value ="0" onchange="myAdult()" onclick="mySummy()" >
+                                   <input type ="number" name="number_adults" id="number_adults"  min="0" max={{$sum}} onchange="myAdult()" onclick="mySummy()" >
                                     ราคา :: {{$triprounds->price_adult}}
                                     ยอดรวมผู้ใหญ่ <p id="padult"></p>
 
@@ -196,7 +196,7 @@ function mySummy(){
         document.getElementById("summary").innerHTML="กรุณากรอกจำนวนคนเกิน";
     }
     else{
-        document.getElementById("summary").innerHTML=" ราคารวมทั้งหมด"+nsum+"<br>"+"จำนวนคนทั้งหมด"+np+"<br>"+"OK";
+        document.getElementById("summary").innerHTML=" ราคารวมทั้งหมด"+nsum+"จำนวนคนทั้งหมด"+np+"OK";
     }
     
 }
