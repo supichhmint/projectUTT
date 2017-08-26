@@ -180,8 +180,9 @@
         
         
         <form name="checkoutForm" method="POST" action="/charge">
+        
     <input type="hidden" name="description" value="Product order ฿3200.00" />
-    
+    <input type="hidden" name="name" value="moiza"/>
     <?php echo e(csrf_field()); ?>
 
 
@@ -193,7 +194,7 @@
       data-button-label ="ซื้อเลยจ้า" 
       data-submit-label="Submit" 
       data-location="yes" 
-      data-amount="320000"
+      data-amount="350000"
       data-currency="thb"
       >
     </script>

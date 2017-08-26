@@ -104,7 +104,7 @@ Route::get('/regisuser',function(){
 });
 
 Route::get('/charge', function () {
-	return view ('omisecard');
+	return view ('bookingsum');
 });
 Route::post('/charge','OmiseController@checkout');
 
@@ -124,5 +124,7 @@ Route::get('/test', function () {
 	return view ('1test');
 });
 Route::post('/test','OmiseController@checkout');
+
+Route::post('/webhook','OmiseController@webhook');
 
 
