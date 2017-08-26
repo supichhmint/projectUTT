@@ -11,7 +11,7 @@ class schedules extends Model
     protected $primarykey ='id';
     protected $fillable =[
         'id','schedule_day','schedule_time','schedule_place',
-        'schedule_description','trip_id','pic'
+        'schedule_description','trip_id'
     ];
    
 
