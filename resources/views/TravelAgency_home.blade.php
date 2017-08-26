@@ -77,11 +77,6 @@
                 </div>
 
             </div>
-            <!-- /.row -->
-
-            <!--TRIP STATUS-->
-
-
             <div class="container">
                 <!-- Marketing Icons Section -->
                 <div class="row">
@@ -90,17 +85,12 @@
                             <h1 class="page-header">ทริปทั้งหมด</h1>
                         </div>
                     </div>
-                    <!--<div class="col-md-4">
-               <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4><i class="glyphicon glyphicon-plus"></i>ADD TRIP </h4>
-                    </div>
-                    <div class="panel-body">
-                        <a href="/addtrip"><img class="img-responsive img-portfolio img-hover " src="pic/ADD1.png" alt=""></a>
-                    </div>
-                </div>
-            </div>-->
-
+                    <?php
+                        $now = tripround::now() ; 
+                    ?>
+                   $if({{$tripround->start_date}} > {{$now}}){
+                       ff
+                   }
                     <div class="container">
                         @foreach ($trips as $tripuser)
                         <div class="col-md-4">
@@ -121,10 +111,7 @@
                                         </div>
 
                                     </div>
-                                    <!-- Table -->
-                                    <table class="table">
-                                        <!--problem ตรงนี้ไม่รัน -->
-                                        
+                                    <table class="table">           
                                             <?php
                                             $tripagent = DB::table('travelagency')->where('id', $tripuser->travelagency_id)->first();
                                             
@@ -212,20 +199,7 @@
 
                         </div>
                         <hr>
-
-                        <!-- Footer 
-                <footer>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <p>Copyright &copy; Your Website 2014</p>
-                        </div>
-                    </div>
-                </footer>
-
-            </div>
-            <!-- /.container -->
-
-                        <!-- jQuery -->
+             <!-- jQuery -->
                         <script src="js/jquery.js"></script>
 
                         <!-- Bootstrap Core JavaScript -->
