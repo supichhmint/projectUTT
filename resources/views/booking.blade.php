@@ -1,6 +1,104 @@
-@extends('layouts.headuser') 
-@section('title', 'booking') 
-@section('content')
+<html>
+
+<head>
+  <title>Up To train - Booking</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Bootstrap Core CSS -->
+  <link href="/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="/vendor/font-awesome/css/font-awesome.min.css" re l="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  <!--Theme CSS-->
+  <link href="/css/uptotrain2.min.css" rel="stylesheet">
+
+
+  <link href="/css/style.css" type="text/css" rel="stylesheet" media="all">
+  <link rel="stylesheet" href="/css/swipebox.css">
+  <link rel="stylesheet" href="/css/ziehharmonika.css">
+  <!-- //Custom Theme files -->
+  <!-- font-awesome icons -->
+  <link href="/css/font-awesome.css" rel="stylesheet">
+  <!-- //font-awesome icons -->
+  <!-- js -->
+  <script src="/js/jquery-2.2.3.min.js"></script>
+  <!-- //js -->
+  <!-- web-fonts -->
+  <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic'
+    rel='stylesheet' type='text/css'>
+  <link href="//fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" integrity="sha384-0s5Pv64cNZJieYFkXYOTId2HMA2Lfb6q2nAcx2n0RTLUnCAoTTsS0nKEO27XyKcY" crossorigin="anonymous"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js" integrity="sha384-ZoaMbDF+4LeFxg6WdScQ9nnR1QC2MIRxA1O9KWEXQwns1G8UNyIEZIQidzb0T1fo" crossorigin="anonymous"></script>
+        <link href="css/bootstrap2.css" type="text/css" rel="stylesheet" media="all">
+    <![endif]-->
+</head>
+
+<body>
+  <!-- banner -->
+  <div class="banner about-banner" style="background-image:url('img/2.jpg')">
+    <div class="header agileinfo-header">
+      <!-- header -->
+      <nav id="mainNav" class="navbar-inverse navbar-custom2 navbar-fixed-top">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+            <a class="navbar-brand page-scroll" href="#page-top">Up To Train</a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right" style="padding-top:0px;">
+
+              <li>
+                <a href="#services">Agreement</a>
+              </li>
+              <li>
+                <a href="#about">Search</a>
+              </li>
+              <li>
+                <a href="#portfolio">Highlight</a>
+              </li>
+              <li>
+                <a href="#team">Railway</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+        <!-- /.container-fluid -->
+      </nav>
+
+    </div>
+    <!-- //header -->
+    <div class="banner-text">
+      <div class="container">
+        <div class="banner-w3lstext" style="padding-top:74px;">
+          <h2>Let's Have Fun With Train </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 <div class="welcome about">
 
@@ -41,7 +139,11 @@
 
                             <br>
                                     จำนวนเด็ก 
+<<<<<<< HEAD
                    <input type ="number" name="number_children" id="number_children" min="0" max={{$sum}} onchange="myChildren()" onclick="mySummy()" >
+=======
+                   <input type ="number" name="number_children" id="number_children" min="0" max={{$sum}} value ="0"  onchange="myChildren()" onclick="mySummy()" >
+>>>>>>> bc36f2b412cbc0229bfca0fb6d464786417f8745
                                     ราคา :: {{$triprounds->price_child}}
                                     ยอดรวมเด็ก<p id="pchild"></p>
                                     
@@ -49,7 +151,11 @@
                             
                             
                                    จำนวนผู้ใหญ่ 
+<<<<<<< HEAD
                                    <input type ="number" name="number_adults" id="number_adults"  min="0" max={{$sum}} onchange="myAdult()" onclick="mySummy()" >
+=======
+                                   <input type ="number" name="number_adults" id="number_adults"  min="0" max={{$sum}}  value ="0" onchange="myAdult()" onclick="mySummy()" >
+>>>>>>> bc36f2b412cbc0229bfca0fb6d464786417f8745
                                     ราคา :: {{$triprounds->price_adult}}
                                     ยอดรวมผู้ใหญ่ <p id="padult"></p>
 
@@ -84,20 +190,32 @@ function myAdult() {
     document.getElementById("padult").innerHTML = "ราคารวมผู้ใหญ่ทั้งหมด"+ x*y;
 }
 function mySummy(){
+<<<<<<< HEAD
     var a = document.getElementById("number_children").value;
+=======
+    var a =document.getElementById("number_children").value;
+>>>>>>> bc36f2b412cbc0229bfca0fb6d464786417f8745
     var b = document.getElementById("number_adults").value;
     var c = {{$triprounds->price_adult}};
     var d = {{$triprounds->price_child}};
     var nsum = (a*d)+(b*c);
     var e = {{$triprounds->amount_seats}};
     console.log(e);
+<<<<<<< HEAD
     var np = a+b; 
+=======
+    var np = parseInt(a)+parseInt(b); 
+>>>>>>> bc36f2b412cbc0229bfca0fb6d464786417f8745
     if(np>e){
         document.getElementById("summary").innerHTML="กรุณากรอกจำนวนคนเกิน";
     }
     else{
+<<<<<<< HEAD
 
         document.getElementById("summary").innerHTML=" ราคารวมทั้งหมด"+nsum+"จำนวนคนทั้งหมด"+np+"OK";
+=======
+        document.getElementById("summary").innerHTML=" ราคารวมทั้งหมด"+nsum+"<br>"+"จำนวนคนทั้งหมด"+np+"<br>"+"OK";
+>>>>>>> bc36f2b412cbc0229bfca0fb6d464786417f8745
     }
     
 }
@@ -109,6 +227,10 @@ function mySummy(){
 
 
 <!-- Plugin JavaScript -->
+<<<<<<< HEAD
 
+=======
+>>>>>>> bc36f2b412cbc0229bfca0fb6d464786417f8745
 
-@endsection('content')
+</script>
+</html>

@@ -17,14 +17,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     addEventListener("load", function () {
       setTimeout(hideURLbar, 0);
     }, false);
-
     function hideURLbar() {
       window.scrollTo(0, 1);
     }
   </script>
   <!--Custom Theme files-->
   <link href="css/bootstrap2.css" type="text/css" rel="stylesheet">
-  <link href="css/profile/style.css" type="text/css" rel="stylesheet">
+  <link href="css/style.css" type="text/css" rel="stylesheet">
   <link href="css/profile/member-style.css" type="text/css" rel="stylesheet">
 
   <!-- font-awesome icons -->
@@ -175,7 +174,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     jQuery(document).ready(function ($) {
       $(".scroll").click(function (event) {
         event.preventDefault();
-
         $('html,body').animate({
           scrollTop: $(this.hash).offset().top
         }, 1000);
@@ -194,11 +192,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       	easingType: 'linear' 
       };
       */
-
       $().UItoTop({
         easingType: 'easeOutQuart'
       });
-
     });
   </script>
   <!-- //smooth-scrolling-of-move-up -->

@@ -179,4 +179,15 @@ class showtripController extends Controller
     {
        DB::table('trips')->where('id', '=', $id)->delete();
     }
+
+    public function search()
+{
+    $search = \Request::get('search'); //<-- we use global request to get the param of URI
+
+    $offices = Office::where('name','like','%'.$search.'%')
+        ->orderBy('name')
+        ->paginate(20);
+
+    return view('offices.index',compact('offices'));
+}
 }

@@ -33,51 +33,8 @@
 </head>
 
 <body>
-  @section('sidebar')
-  <!-- Navigation -->
-  <nav id="mainNav" class="navbar-inverse navbar-custom2 navbar-fixed-top">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header page-scroll">
-        <button type="button" class="navbar-toggle" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-        <a class="navbar-brand page-scroll" href="#page-top">Up To Train</a>
-      </div>
+  @yield('content') 
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li class="hidden">
-            <a href="#page-top"></a>
-          </li>
-          <li>
-            <a class="page-scroll" href="#services">Agreement</a>
-          </li>
-          <li>
-            <a class="page-scroll" href="#about">Search</a>
-          </li>
-          <li>
-            <a class="page-scroll" href="#portfolio">Highlight</a>
-          </li>
-          <li>
-            <a class="page-scroll" href="#team">Railway</a>
-          </li>
-          <li>
-            <a class="page-scroll" href="#contact">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <!-- /.container-fluid -->
-  </nav>
-  @show
-
-  <div class="container">
-    @yield('content')
-
-    @yield('js')
-  </div>
 </body>
 
 </html>

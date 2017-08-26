@@ -22,8 +22,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			window.scrollTo(0, 1);
 		}
 	</script>
+<<<<<<< HEAD
 
 
+=======
+	<!-- Custom Theme files -->
+	<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+	<link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+	<link rel="stylesheet" href="css/swipebox.css">    
+	<link rel="stylesheet" href="css/ziehharmonika.css">
+	<!-- //Custom Theme files -->
+	<!-- font-awesome icons -->
+	<link href="css/font-awesome.css" rel="stylesheet">
+	<!-- //font-awesome icons -->
+	<!-- js -->
+	<script src="js/jquery-2.2.3.min.js"></script>
+	<!-- //js -->
+>>>>>>> bc36f2b412cbc0229bfca0fb6d464786417f8745
 	<!-- web-fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic'
 	  rel='stylesheet' type='text/css'>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\trip;
 use App\schedules;
 use App\tripround;
+use Illuminate\Support\Facades\Input;
 class UserController extends Controller
 {
     
@@ -14,12 +15,12 @@ class UserController extends Controller
     }
 
     function search(){
-        $trips = DB::table('trips')->get();
+         $trips = Trip::paginate(15);
         return view('tripuser',['trips'=>$trips]);
     }
     
     function schedule($id){
-
+  
         $schedules = schedules::where('trip_id',$id)->get();
         $triprounds = tripround::where('trip_id',$id)->get();
         $trip = trip::where('id',$id)->first();
@@ -37,7 +38,10 @@ class UserController extends Controller
         $count = $booking->count();
         $trip = DB::table('trips')->where('id',$fk)->get();
         $triprounds = tripround::where('id',$id)->first();
+<<<<<<< HEAD
 
+=======
+>>>>>>> bc36f2b412cbc0229bfca0fb6d464786417f8745
         $data = array(
             'triprounds' => $triprounds,
             'trip' => $trip,
@@ -45,10 +49,14 @@ class UserController extends Controller
             'count' => $count
         );
         return view('booking', $data);
+<<<<<<< HEAD
 
     }
 
     
+=======
+    }
+>>>>>>> bc36f2b412cbc0229bfca0fb6d464786417f8745
     function login(){
         return view('login');
     }
@@ -58,7 +66,6 @@ class UserController extends Controller
         return view('register');
     }
 
-    
     
 
 

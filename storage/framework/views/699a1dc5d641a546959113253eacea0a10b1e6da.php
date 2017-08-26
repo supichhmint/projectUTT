@@ -14,9 +14,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li class="hidden">
-                    <a href="#page-top"></a>
-                </li>
+
                 <li>
                     <a class="page-scroll" href="#services">How to Use</a>
                 </li>
@@ -27,9 +25,6 @@
                 <li>
                     <a class="page-scroll" href="#portfolio">Highlight</a>
                 </li>
-                <!--<li>
-                        <a class="page-scroll" href="#team">Railway</a>
-                    </li>-->
                 <li>
                     <a class="page-scroll" href="#contact">Contact</a>
                 </li>
@@ -100,60 +95,19 @@
                 <h3 class="section-subheading text-muted">" มองหาทริปอยู่ใช่ไหม? "</h3>
             </div>
         </div>
-        <br><br>
-        <div class="row">
-            <div class="col-lg-12 text-center">
+        <!-- search Button -->
+        <div id="success"></div>
 
+        <!--laravel-->
+        <a href="search"><button type="submit" class="btn btn-xl">Search Now!</button></a> <br><br>
+        <br>
+        <p>*This "search function" to next sprint</p>
 
-                <!-- Source Dropdown -->
-                <div class="btn-group">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Source <span class="caret"></span>
-                        </button>
-                    <ul class="dropdown-menu">
-                        <!--<?php $__currentLoopData = $trips; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $station): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-    <li><?php echo $station->station_name; ?></li>
-<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>-->
-                    </ul>
-                </div>
-
-                <!-- destination Dropdown -->
-                <div class="btn-group">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    destination <span class="caret"></span>
-                        </button>
-
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Bangkok</a></li>
-                        <li><a href="#">Lop Buri</a></li>
-                        <li><a href="#">Chiang Mai</a></li>
-                        <!--
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            -->
-                    </ul>
-                </div>
-
-                <!-- date Dropdown -->
-                <div class="btn-group">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    date <span class="caret"></span>
-                        </button>
-                </div><br><br><br><br>
-
-                <!-- search Button -->
-                <div id="success"></div>
-
-                <!--laravel-->
-                <a href="search"><button type="submit" class="btn btn-xl">Search Now!</button></a> <br><br>
-                <br>
-                <p>*This "search function" to next sprint</p>
-
-            </div>
+    </div>
 
 
 
-        </div>
+    </div>
     </div>
 </section>
 
@@ -235,7 +189,7 @@
             <div class="col-lg-12 text-center">
                 <h2 class="section-heading">Contact Us</h2>
                 <h3 class="section-subheading text-muted">ติดต่อพวกเราได้โดยกรอกแบบฟอร์มด้านล่าง แล้วพวกเราจะรีบตอบกลับอย่างเร่งด่วน *Next Sprint"</h3>
-                
+
             </div>
         </div>
         <div class="row">
@@ -807,10 +761,6 @@
 
 <!-- Theme JavaScript -->
 <script src="js/agency.min.js"></script>
-
-</body>
-
-</html>
 
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

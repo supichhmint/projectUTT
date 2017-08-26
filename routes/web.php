@@ -14,6 +14,20 @@ Route::get('/', function()
 {
 	return View::make('index');
 });
+<<<<<<< HEAD
+
+=======
+Route::get('/', function()
+{
+	return redirect('home');
+});
+
+
+Route::get('/login', function()
+{
+	return View::make('login');
+});
+>>>>>>> bc36f2b412cbc0229bfca0fb6d464786417f8745
 
 
 Route::get('/addTrip', function()
@@ -24,20 +38,14 @@ Route::get('/headlogo', function()
 {
 	return View::make('/headlogo');
 });
-Route::get('/dashboard', function()
-{
-	return view('/dashboard');
-});
+
 
 Auth::routes();
-Route::get('/', function() {
-	return redirect('home');
-});
 
-Route::get('/home', 'HomeController@index');
+
+
 Route::resource('/agency', 'showtripController');
 
-//Route::get('/addtripround', 'tripController@add_tripRound');
 
 Route::resource('/addtrip','addtripController');
 Route::resource('/show','showtripController');
@@ -60,6 +68,7 @@ Route::get('/search/index', 'UserController@index');
 Route::get('/schedule/{id}','UserController@schedule');
 
 Route::get('/search', 'UserController@search');
+Route::get('/searchtrip', 'UserController@searchtrip');
 Route::get('/agreement',function(){
 	return view ('agreement');
 });
@@ -87,5 +96,42 @@ Route::get('/regisuser',function(){
 	return view ('regis_user');
 });
 
+<<<<<<< HEAD
 Route::get('/booking/{id}','UserController@booking');
 
+=======
+Route::get('/booking',function(){
+	return view ('booking');
+});
+
+Route::get('/profilebooking',function(){
+	return view ('profile_booking');
+});
+
+Route::post ( '/searcht', function () {
+	$q = Input::get ( 'q' );
+	$user = DB::table('trips')
+	->where ( 'trips_name', 'LIKE', '%' . $q . '%' )->paginate(10);;
+	if (count ( $user ) > 0)
+		return view ( 'tripuser_resultsearch' )->withDetails ( $user )->withQuery ( $q );
+	else
+		return view ( 'tripuser_resultsearch' )->withMessage ( 'No Details found. Try to search again !' );
+} );
+
+Route::get('/booking/{id}','UserController@booking');
+Route::get('/charge', function () {
+	return view ('omisecard');
+});
+Route::post('/charge','OmiseController@checkout');
+Route::get('/card', function () {
+	return view ('card');
+});
+Route::post('/card', 'OmiseController@checkout');
+Route::get('/test', function () {
+	return view ('1test');
+});
+Route::post('/test','OmiseController@checkout');
+Route::get('/bookingsum', function () {
+	return view ('bookingsum');
+});
+>>>>>>> bc36f2b412cbc0229bfca0fb6d464786417f8745
