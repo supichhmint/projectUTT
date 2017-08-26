@@ -1,6 +1,4 @@
-@extends('layouts.agency') 
-@section('title', 'Agency') 
-@section('agency_banner')
+@extends('layouts.agency') @section('title', 'Agency') @section('agency_banner')
 <link href="css/uptotrain.min.css" rel="stylesheet">
 <link href="css/login.css" rel="stylesheet">
 <div class="container">
@@ -14,8 +12,7 @@
     </div>
 </div>
 <!-- /.row -->
-@endsection 
-@section('content')
+@endsection @section('content')
 <div class="container" style="padding-top:30px;">
     <link href="/css/search_tripUser/style.css" rel="stylesheet" type="text/css" />
     <link href="/css/search_tripUser/component.css" rel='stylesheet' type='text/css' />
@@ -34,6 +31,11 @@
             <div class="new-product">
                 <div id="cbp-vm" class="cbp-vm-switcher cbp-vm-view-list">
                     <div class="pages">
+                     <h4><?php 
+                     use Carbon\Carbon;
+                     $dt     = Carbon::now();
+                     echo $dt->subDays(10)->diffForHumans();  ?>
+                     </h4>
                         <h4>{{$trips->count()}} total trips</h4>
                     </div>
                     <div class="clearfix"></div>
@@ -70,7 +72,9 @@
                                                     </tr>
                                                     @foreach($tripround as $tr)
                                                     <tr style="font-size:1.3em;">
-                                                        <td>{{$tr->start_date}} ถึง {{$tr->departure_date}}</td>
+                                                        <td>{{date('d-m-Y', strtotime($tr->start_date))}} ถึง {{date('d-m-Y',
+                                                            strtotime($tr->departure_date))}}
+                                                        </td>
                                                         <td>{{$tr->amount_seats}}</td>
                                                         <td>{{$tr->amount_seats}}</td>
                                                     </tr>
@@ -84,8 +88,49 @@
                         </li>
                     </ul>
                 </div>
-                <div align="center">
-                   
+
+            </div>
+            <!-- Page Content -->
+            <div class="container">
+
+                <!-- Marketing Icons Section -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            COMMENTION
+                        </h1>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4><i class="glyphicon glyphicon-pencil"></i>TRIP </h4>
+                            </div>
+                            <div class="panel-body">
+                                <p>
+                                    <div class="alert alert-success" role="alert">
+                                        Well done! You have n new COMMENTION .
+                                    </div>
+                                </p>
+                                <a href="comment_TRIP.html" class="btn btn-default">SHOW NOW</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4><i class="glyphicon glyphicon-pencil"></i>COMPANY </h4>
+                            </div>
+                            <div class="panel-body">
+                                <p>
+                                    <div class="alert alert-success" role="alert">
+                                        Well done! You have n new COMMENTION .
+                                    </div>
+                                </p>
+                                <a href="comment_TRIP.html" class="btn btn-default">SHOW NOW</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
