@@ -808,8 +808,4 @@
 <!-- Theme JavaScript -->
 <script src="js/agency.min.js"></script>
 
-</body>
-
-</html>
-
 @endsection('content')

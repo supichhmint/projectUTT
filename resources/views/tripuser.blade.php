@@ -1,4 +1,6 @@
-@extends('layouts.headindex') @section('title', 'Search Trip') @section('content')
+@extends('layouts.headIndex') 
+@section('title', 'Search Trip') 
+@section('content')
 
 
 <!-- Page Content -->
@@ -20,15 +22,15 @@
 </div>
 
 <!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/tether/tether.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/tether/tether.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
 @endsection 
 @section('tripuser')
 
 <div class="container">
-    <link href="css/search_tripUser/style.css" rel="stylesheet" type="text/css" />
-    <link href="css/search_tripUser/component.css" rel='stylesheet' type='text/css' />
+    <link href="/css/search_tripUser/style.css" rel="stylesheet" type="text/css" />
+    <link href="/css/search_tripUser/component.css" rel='stylesheet' type='text/css' />
 
     <div class="container">
         <div class="products-page">
@@ -109,7 +111,7 @@
                             </li>
                             @endforeach
                     </ul>
-                    
+
                 </div>
                 <div align="center">
                     {{$trips->render()}}
@@ -117,8 +119,8 @@
             </div>
         </div>
     </div>
-    <script src="js/search_tripUser/cbpViewModeSwitch.js" type="text/javascript"></script>
-    <script src="js/search_tripUser/classie.js" type="text/javascript"></script>
+    <script src="/js/search_tripUser/cbpViewModeSwitch.js" type="text/javascript"></script>
+    <script src="/js/search_tripUser/classie.js" type="text/javascript"></script>
 </div>
 <div class="clearfix"></div>
 
