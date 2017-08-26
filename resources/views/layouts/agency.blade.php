@@ -147,6 +147,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/bootstrap.js"></script>
+    <script src="js/search_tripUser/cbpViewModeSwitch.js" type="text/javascript"></script>
 </body>
 
 </html>

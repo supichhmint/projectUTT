@@ -111,7 +111,7 @@
                     </ul>
                 </div>
                 <div align="center">
-                    <?php echo e($trips->render()); ?>
+                    <?php echo e($trips->links()); ?>
 
                 </div>
             </div>

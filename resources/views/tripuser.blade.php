@@ -110,7 +110,7 @@
                     </ul>
                 </div>
                 <div align="center">
-                    {{$trips->render()}}
+                    {{$trips->links()}}
                 </div>
             </div>
         </div>
