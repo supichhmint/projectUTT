@@ -100,27 +100,27 @@
   </div>
 
 
-<div class="welcome about">
+  <div class="welcome about">
 
     <div class="container" align="center">
-        <div class="row">
+      <div class="row">
         <?php $__currentLoopData = $trip; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $trips): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <div>
-                <h2><?php echo e($trips->trips_name); ?></h2>
-                <h5><?php echo e($trips->trip_nday); ?>วัน <?php echo e($trips->trip_nnight); ?>คืน</h5>
-                <p>จังหวัด<?php echo e($trips->trip_province); ?></p>
-                <p><?php echo e($trips->trip_meal); ?>มื้อ</p>
-                <img class="img-responsive img-centered" src="/img/portfolio/trip1_00.jpg" alt="">
-                <p></p>
-            </div>
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-            <div class="row">
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
-                    <ul class="list-inline">
-                   
-                   
-                    <?php
+        <div>
+          <h2><?php echo e($trips->trips_name); ?></h2>
+          <h5><?php echo e($trips->trip_nday); ?>วัน <?php echo e($trips->trip_nnight); ?>คืน</h5>
+          <p>จังหวัด<?php echo e($trips->trip_province); ?></p>
+          <p><?php echo e($trips->trip_meal); ?>มื้อ</p>
+          <img class="img-responsive img-centered" src="/img/portfolio/trip1_00.jpg" alt="">
+          <p></p>
+        </div>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+            <ul class="list-inline">
+
+
+              <?php
                     
                     if($count == 0){
                         $sum = $triprounds->amount_seats;
@@ -131,86 +131,230 @@
                         $sum = $amount-$nbooking;
                     } 
                         
-                    ?> 
-                  
-                      
-                    <form >                           
-                                รอบวันที่ <?php echo e($triprounds->start_date); ?> - <?php echo e($triprounds->departure_date); ?>  
+                    ?>
 
-                            <br>
-                                    จำนวนเด็ก 
-                   <input type ="number" name="number_children" id="number_children" min="0" max=<?php echo e($sum); ?> value ="0"  onchange="myChildren()" onclick="mySummy()" >
 
-                                    ราคา :: <?php echo e($triprounds->price_child); ?>
+                <form>
+                  รอบวันที่ <?php echo e($triprounds->start_date); ?> - <?php echo e($triprounds->departure_date); ?>
 
-                                    ยอดรวมเด็ก<p id="pchild"></p>
-                                    
-                            <br>
-                            
-                            
-                                   จำนวนผู้ใหญ่ 
-                                   <input type ="number" name="number_adults" id="number_adults"  min="0" max=<?php echo e($sum); ?> onchange="myAdult()" onclick="mySummy()" >
-                                    ราคา :: <?php echo e($triprounds->price_adult); ?>
 
-                                    ยอดรวมผู้ใหญ่ <p id="padult"></p>
+                  <br> จำนวนเด็ก
+                  <input type="number" name="number_children" id="number_children" min="0" max=<?php echo e($sum); ?> value="0" onchange="myChildren()" onclick="mySummy()">                  ราคา :: <?php echo e($triprounds->price_child); ?> ยอดรวมเด็ก
+                  <p id="pchild"></p>
 
-                                  สถานะการจอง  <p id="summary" ></p>
+                  <br> จำนวนผู้ใหญ่
+                  <input type="number" name="number_adults" id="number_adults" min="0" max=<?php echo e($sum); ?> onchange="myAdult()" onclick="mySummy()">                  ราคา :: <?php echo e($triprounds->price_adult); ?> ยอดรวมผู้ใหญ่
+                  <p id="padult"></p>
 
-                                    ที่นั่งว่าง :: <?php echo e($sum); ?>   /จำนวนที่นั้งทั้งหมด ::   <?php echo e($triprounds->amount_seats); ?>
+                  สถานะการจอง
+                  <p id="summary"></p>
 
-                                    
-    </form>                      
-                    </ul>
-                </div>
-                <div class="col-md-3"></div>
-            </div>
-            
-            <a href="/bookingsum">
+                  ที่นั่งว่าง :: <?php echo e($sum); ?> /จำนวนที่นั้งทั้งหมด :: <?php echo e($triprounds->amount_seats); ?>
+
+
+                </form>
+            </ul>
+          </div>
+          <div class="col-md-3"></div>
+        </div>
+
+        <a href="/bookingsum">
                 <button type="button" class="btn btn-primary" data-dismiss="modal" href=<?php echo e(url( '/bookingsum')); ?>>  <i class="fa fa-bookmark"></i> จองตอนนี้</button>
                 </a>
+        <div class="full-width bg-white">
+          <div class="container">
+            <div class="col-sm-5 col-xs-12 clearpd">
+              <div id="price_info">
+                <h2 class="booking-info" style="">โปรดระบุจำนวนผู้เดินทาง</h2>
+                <div class="full-width" style="">
+                  <div class="col-sm-12 box booking-passenger font-txt">
+                    <p class="booking-passenger"><strong>ผู้ใหญ่/เด็ก (บาท/ท่าน)</strong></p>
+                    <div class="full-width">
+                      <div class="row">
+                        <label class="col-xs-3 price-txt">พักคู่</label>
+                        <div class="col-xs-4 col-md-3">
+                          <div class="input-group ">
+                            <span class="btn input-group-addon num-pax" onclick="sub_num_pax('tpr_price_1ATwin_HT',2)"> - </span>
+                            <input type="text" name="num_tpr_price_1ATwin_HT" class="form-control text-center num-pax" min="0" value="0" disabled="">
+                            <span class="btn input-group-addon num-pax" onclick="add_num_pax('tpr_price_1ATwin_HT',2)"> + </span>
+                          </div>
+                        </div>
+                        <label class="col-xs-5 col-md-6 price-txt">฿ 50,900</label>
+                        <input type="hidden" name="price_tpr_price_1ATwin_HT" value="50900">
+                      </div>
+                      <div class="row">
+                        <label class="col-xs-3 price-txt">พักเดี่ยว</label>
+                        <div class="col-xs-4 col-md-3">
+                          <div class="input-group ">
+                            <span class="btn input-group-addon num-pax" onclick="sub_num_pax('tpr_price_1ASingle_HT',1)"> - </span>
+                            <input type="text" name="num_tpr_price_1ASingle_HT" class="form-control text-center num-pax" min="0" value="0" disabled="">
+                            <span class="btn input-group-addon num-pax" onclick="add_num_pax('tpr_price_1ASingle_HT',1)"> + </span>
+                          </div>
+                        </div>
+                        <label class="col-xs-5 col-md-6 price-txt">฿ 60,800</label>
+                        <input type="hidden" name="price_tpr_price_1ASingle_HT" value="60800">
+                      </div>
+                      <div class="row">
+                        <label class="col-xs-3 price-txt">พักสาม</label>
+                        <div class="col-xs-4 col-md-3">
+                          <div class="input-group ">
+                            <span class="btn input-group-addon num-pax" onclick="sub_num_pax('tpr_price_3A_HT',3)"> - </span>
+                            <input type="text" name="num_tpr_price_3A_HT" class="form-control text-center num-pax" min="0" value="0" disabled="">
+                            <span class="btn input-group-addon num-pax" onclick="add_num_pax('tpr_price_3A_HT',3)"> + </span>
+                          </div>
+                        </div>
+                        <label class="col-xs-5 col-md-6 price-txt">฿ 50,900</label>
+                        <input type="hidden" name="price_tpr_price_3A_HT" value="50900">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 box font-txt">
+                    <p class="booking-passenger"><strong>เด็กพักกับผู้ใหญ่ (บาท/ท่าน)</strong></p>
+                    <div class="full-width">
+                      <div class="row hidden">
+                        <label class="col-xs-3 price-txt">เด็ก</label>
+                        <div class="col-xs-4 col-md-3">
+                          <div class="input-group ">
+                            <span class="btn input-group-addon num-pax" onclick="sub_num_pax('tpr_price_1A1C_HT',1)"> - </span>
+                            <input type="text" name="num_tpr_price_1A1C_HT" class="form-control text-center num-pax" min="0" value="0" disabled="">
+                            <span class="btn input-group-addon num-pax" onclick="add_num_pax('tpr_price_1A1C_HT',1)"> + </span>
+                          </div>
+                        </div>
+                        <label class="col-xs-5 col-md-6 price-txt">฿ 52,900</label>
+                        <input type="hidden" name="price_tpr_price_1A1C_HT" value="52900">
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-md-12 customer-not-select" style="">
+                  <span class="ch_without_ad alert-danger hidden" style="padding: 0px 5px;">เด็กต้องเดินทางกับผู้ใหญ่อย่างน้อย 1 ท่าน</span>
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-12 customer-select" style="display: none;">
+                <div class="col-xs-1 input-group booking-passenger">
+                  <button type="button" class="btn full-width" onclick="reset_price(0,0)">
+                <span class="glyphicon glyphicon-repeat"> เริ่มต้นคำนวณใหม่ </span>
+              </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-7 col-xs-12 font-txt row-margin-b clearpd">
+              <div id="summary_selected" class="">
+                <!-- <h2 class="booking-info">&nbsp;</h2> -->
+                <div class="full-width">
+                  <div class="col-xs-12 box">
+                    <div class="row row-odd row-title">
+                      <label class="col-xs-6"><strong>รายการที่ท่านเลือก</strong></label>
+                      <label class="col-xs-3 text-center"><strong>จำนวน (คน)</strong></label>
+                      <label class="col-xs-3 text-right"><strong>ราคา (บาท)</strong></label>
+                    </div>
+                    <div class="row item-selected" style="display: none;">
+                      <label class="col-xs-6">ผู้ใหญ่ หรือ เด็ก พักห้องคู่</label>
+                      <label name="num_tpr_price_1ATwin_HT" class="col-xs-3 text-center num_tpr_price_1ATwin_HT">-</label>
+                      <label name="sum_tpr_price_1ATwin_HT" class="col-xs-3 text-right sum_tpr_price_1ATwin_HT">-</label>
+                    </div>
+                    <div class="row item-selected" style="display: none;">
+                      <label class="col-xs-6">ผู้ใหญ่พักเดี่ยว</label>
+                      <label name="num_tpr_price_1ASingle_HT" class="col-xs-3 text-center num_tpr_price_1ASingle_HT">-</label>
+                      <label name="sum_tpr_price_1ASingle_HT" class="col-xs-3 text-right sum_tpr_price_1ASingle_HT">-</label>
+                    </div>
+                    <div class="row item-selected" style="display: none;">
+                      <label class="col-xs-6">ผู้ใหญ่ 3 ท่าน พักห้องเดียวกัน</label>
+                      <label name="num_tpr_price_3A_HT" class="col-xs-3 text-center num_tpr_price_3A_HT">-</label>
+                      <label name="sum_tpr_price_3A_HT" class="col-xs-3 text-right sum_tpr_price_3A_HT">-</label>
+                    </div>
+                    <div class="row item-selected" style="display: none;">
+                      <label class="col-xs-6">เด็กเตียงเสริม พักกับผู้ใหญ่ 2 ท่าน</label>
+                      <label name="num_tpr_price_2A1Cbed_HT" class="col-xs-3 text-center num_tpr_price_2A1Cbed_HT">-</label>
+                      <label name="sum_tpr_price_2A1Cbed_HT" class="col-xs-3 text-right sum_tpr_price_2A1Cbed_HT">-</label>
+                    </div>
+                    <div class="row item-selected" style="display: none;">
+                      <label class="col-xs-6">เด็กไม่มีเตียงเสริม พักกับผู้ใหญ่ 2 ท่าน</label>
+                      <label name="num_tpr_price_2A1CNobed_HT" class="col-xs-3 text-center num_tpr_price_2A1CNobed_HT">-</label>
+                      <label name="sum_tpr_price_2A1CNobed_HT" class="col-xs-3 text-right sum_tpr_price_2A1CNobed_HT">-</label>
+                    </div>
+                    <div class="row row-odd-2">
+                      <h4 class="col-xs-6 textwhite">คำนวณราคาโดยประมาณ</h4>
+                      <h4 class="col-sm-3 col-xs-2 text-center textwhite"><span class="total-pax">-</span></h4>
+                      <h4 class="col-sm-3 col-xs-4 text-right textwhite"><span class="total-price">-</span></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div id="price-condition" class="col-sm-7 text-condition">
+                <ul class="b">
+                  <li>ราคาด้านบนเป็นราคาการคำนวณโดยประมาณเท่านั้น</li>
+                  <li>เงื่อนไขการเข้าพักสำหรับผู้ใหญ่ 3 ท่านต่อห้อง เป็นไปตามข้อกำหนดของโรงแรม รวมถึงนโยบายเรื่องเตียงเสริม อาจไม่สามารถให้บริการได้ในบางเมือง
+                    บางประเทศ</li>
+                  <li>เงื่อนไขเด็กเตียงเสริม พักกับผู้ใหญ่ 2 ท่าน เป็นไปตามข้อกำหนดของโรงแรม รวมถึงนโยบายเรื่องเตียงเสริม อาจไม่สามารถให้บริการได้ในบางเมือง
+                    บางประเทศ</li>
+                  <li>ทางเจ้าหน้าที่จะทำการยืนยันราคา การเข้าพัก และ จำนวนห้องพักตามนโยบายของโรงแรมแต่ละแห่งผ่านใบแจ้งชำระเงินที่เป็นทางการอีกครั้ง</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
 
 
-<div>===================================================</div>
-<script>
-function myChildren() {
-    var x = document.getElementById("number_children").value;
-    var y = <?php echo e($triprounds->price_child); ?>;
-    document.getElementById("pchild").innerHTML =  "ราคารวมเด็กทั้งหมด"+x*y;
-}
-function myAdult() {
-    var x = document.getElementById("number_adults").value;
-    var y = <?php echo e($triprounds->price_adult); ?>;
-    document.getElementById("padult").innerHTML = "ราคารวมผู้ใหญ่ทั้งหมด"+ x*y;
-}
-function mySummy(){
-    var a = document.getElementById("number_children").value;
-    var b = document.getElementById("number_adults").value;
-    var c = <?php echo e($triprounds->price_adult); ?>;
-    var d = <?php echo e($triprounds->price_child); ?>;
-    var nsum = (a*d)+(b*c);
-    var e = <?php echo e($triprounds->amount_seats); ?>;
-    console.log(e);
 
-    var np = parseInt(a)+parseInt(b); 
-    if(np>e){
-        document.getElementById("summary").innerHTML="กรุณากรอกจำนวนคนเกิน";
+  <script>
+    function myChildren() {
+      var x = document.getElementById("number_children").value;
+      var y = {
+        {
+          $triprounds - > price_child
+        }
+      };
+      document.getElementById("pchild").innerHTML = "ราคารวมเด็กทั้งหมด" + x * y;
     }
-    else{
-        document.getElementById("summary").innerHTML=" ราคารวมทั้งหมด"+nsum+"จำนวนคนทั้งหมด"+np+"OK";
+
+    function myAdult() {
+      var x = document.getElementById("number_adults").value;
+      var y = {
+        {
+          $triprounds - > price_adult
+        }
+      };
+      document.getElementById("padult").innerHTML = "ราคารวมผู้ใหญ่ทั้งหมด" + x * y;
     }
-    
-}
-</script>
 
-<!--</section>-->
+    function mySummy() {
+      var a = document.getElementById("number_children").value;
+      var b = document.getElementById("number_adults").value;
+      var c = {
+        {
+          $triprounds - > price_adult
+        }
+      };
+      var d = {
+        {
+          $triprounds - > price_child
+        }
+      };
+      var nsum = (a * d) + (b * c);
+      var e = {
+        {
+          $triprounds - > amount_seats
+        }
+      };
+      console.log(e);
 
-<!-- jQuery -->
+      var np = parseInt(a) + parseInt(b);
+      if (np > e) {
+        document.getElementById("summary").innerHTML = "กรุณากรอกจำนวนคนเกิน";
+      } else {
+        document.getElementById("summary").innerHTML = " ราคารวมทั้งหมด" + nsum + "จำนวนคนทั้งหมด" + np + "OK";
+      }
+
+    }
+  </script>
 
 
-<!-- Plugin JavaScript -->
-
-</script>
 </html>

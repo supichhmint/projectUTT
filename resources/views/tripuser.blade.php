@@ -123,6 +123,4 @@
     <script src="/js/search_tripUser/classie.js" type="text/javascript"></script>
 </div>
 <div class="clearfix"></div>
-
-
 @endsection
