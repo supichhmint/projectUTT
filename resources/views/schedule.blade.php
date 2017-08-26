@@ -2,28 +2,23 @@
 
 <head>
     <meta charset="utf-8">
-
     <title>Up To train</title>
     <!-- Bootstrap Core CSS -->
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Custom Fonts -->
     <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
     <!-- เปิดแล้ว Theme CSS -->
     <link href="/css/uptotrain2.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
 </head>
 
 <body id="page-top" class="index">
-
     <div align="left">
         <a class="btn btn-primary" href={{ url( '/search') }}>Back</a>
     </div>
     <!--<div class="container">-->
     <div class="container" id="about" align="center">
         <div class="row">
-
             <!-- Project Details Go Here -->
             <h1>{{ $trip->trips_name }}</h1>
             <!--<p class="item-intro text-muted">จังหวัด<br>โดย "$บริษัททัวร์"</p>-->
@@ -48,7 +43,6 @@
                                 <h3>{{$loop->iteration}}</h3>
                             </div>
                             @if($loop->iteration %2 == 0)
-
                             <li class="timeline-inverted">
                                 @else
                                 <li>
@@ -67,68 +61,28 @@
                                     </div>
                                 </li>
                                 @endforeach
-
-
                                 <li class="timeline-inverted">
                                     <div class="timeline-image">
-                                        
-                                        </h4>
+                                        <h4>Booking</h4>
+                                        <h4>now</h4>
                                     </div>
                                 </li>
                         </ul>
                     </div>
-
                 </div>
-
                 <br><br>
-
-                <!--<ul class="list-inline">
-                                    <li>Travel Agency: abc company</li>
-                                    <li>Date: ?วัน ?คืน</li>
-                                    <li>Cost: ? baht</li>
-                                </ul>-->
-<<<<<<< HEAD
-                    <!-- ADD table round -->
-
-                    <div class="row">
-                        <div class="col-md-3"></div>
-                        <div class="col-md-6">
-                            <ul class="list-inline">
-                                <table class="table">
-                                    <tr>
-                                        <th>รอบวันที่</th>
-                                        <th>ราคาผู้ใหญ่</th>
-                                        <th>ราคาเด็ก</th>
-                                        <th>จำนวนที่ว่าง</th>
-                                    </tr>
-                                    <!-- edit add loop select for db -->
-                                    @foreach($triprounds as $tripround)
-                                    <tr>
-                                        <td>{{ $tripround->start_date }}</td>
-                                        <td>{{$tripround->price_adult}}</td>
-                                        <td>{{$tripround->price_child}}</td>
-                                        <td>{{$tripround->amount_seats}}</td>
-                                        <?php
-                                             $tid="{{$tripround->id}}"
-                                         ?>
-                                        <td><a class="btn btn-primary" href="/booking/{{$tripround->id}}" name ="{{$tid}}">ดูรายการทัวร์นี้</a></td>
-                                    </tr>
-                                    @endforeach
-                                </table>
-                                <!-- end loop -->
-                            </ul>
-                        </div>
-                        <div class="col-md-3"></div>
-=======
-                <!-- ADD table round -->
-
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h3 class="section-subheading text-muted">ตารางราคา</h3>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-md-3"></div>
                     <div class="col-md-6">
                         <ul class="list-inline">
                             <table class="table">
                                 <tr align="center">
-                                    <th>รอบวันที่</th>
+                                    <th>วันที่เดินทาง</th>
                                     <th>ราคาผู้ใหญ่</th>
                                     <th>ราคาเด็ก</th>
                                     <th>จำนวนที่ว่าง</th>
@@ -136,38 +90,27 @@
                                 </tr>
                                 <!-- edit add loop select for db -->
                                 @foreach($triprounds as $tripround)
-                                <tr>
+                                <tr align="center">
                                     <td>{{ $tripround->start_date }}</td>
                                     <td>{{$tripround->price_adult}}</td>
                                     <td>{{$tripround->price_child}}</td>
                                     <td>{{$tripround->amount_seats}}</td>
-                                    <td>
-                                        <?php
-                                             $tid="{{$tripround->id}}"
-                                         ?><a class="btn btn-primary" href="/booking/{{$tripround->id}}" name="{{$tid}}">ดูรายการทัวร์นี้</a></td>
+                                    <?php
+                                    $tid="{{$tripround->id}}"
+                                    ?>
+                                        <td><a class="btn btn-primary" href="/booking/{{$tripround->id}}" name="{{$tid}}">จองเลย</a></td>
                                 </tr>
                                 @endforeach
                             </table>
                             <!-- end loop -->
                         </ul>
->>>>>>> bc36f2b412cbc0229bfca0fb6d464786417f8745
                     </div>
                     <div class="col-md-3"></div>
                 </div>
-
-
+                <div class="col-md-3"></div>
             </div>
         </div>
     </div>
-    </div>
-
-
-
-
-
-
-
-   
     <!-- jQuery -->
     <script src="/vendor/jquery/jquery.min.js"></script>
 
@@ -177,15 +120,12 @@
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" integrity="sha384-mE6eXfrb8jxl0rzJDBRanYqgBxtJ6Unn4/1F7q4xRRyIw7Vdg9jP4ycT7x1iVsgb"
         crossorigin="anonymous"></script>
-
     <!-- Contact Form JavaScript -->
-    <script src="/js/jqBootstrapValidation.js"></script>
-    
-
+    <script src="js/jqBootstrapValidation.js"></script>
     <!-- Theme JavaScript -->
-    <script src="/js/agency.min.js"></script>
-    <script type="text/javascript" src="/js/move-top.js"></script>
-    <script type="text/javascript" src="/js/easing.js"></script>
+    <script src="js/agency.min.js"></script>
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
             $(".scroll").click(function (event) {

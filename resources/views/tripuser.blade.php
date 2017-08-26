@@ -26,12 +26,11 @@
 <script src="/vendor/tether/tether.min.js"></script>
 <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
 @endsection 
-@section('tripuser')
 
+@section('tripuser')
 <div class="container">
     <link href="/css/search_tripUser/style.css" rel="stylesheet" type="text/css" />
     <link href="/css/search_tripUser/component.css" rel='stylesheet' type='text/css' />
-
     <div class="container">
         <div class="products-page">
             <div class="products">
@@ -93,9 +92,7 @@
                                                             <p class="title">{{$tripuser->trips_name}}</p>
                                                             <p>จังหวัด {{$tripuser->trip_province}}</p>
                                                             <p>บริษัท {{$tripagent->agency_name_en}}</p><br>
-                                                            <p>ระยะเวลา {{$tripuser->trip_nday}} วัน {{$tripuser->trip_nnight}}
-                                                                คืน
-                                                            </p>
+                                                            <p>ระยะเวลา {{$tripuser->trip_nday}} วัน {{$tripuser->trip_nnight}}คืน</p>
                                                         </div>
                                                         <div class="clearfix"></div>
                                                     </div>
@@ -109,9 +106,8 @@
                                 </div>
                                 <a class="cbp-vm-icon cbp-vm-add item_add" href="#">Add to cart</a>
                             </li>
-                            @endforeach
+                        @endforeach
                     </ul>
-
                 </div>
                 <div align="center">
                     {{$trips->render()}}

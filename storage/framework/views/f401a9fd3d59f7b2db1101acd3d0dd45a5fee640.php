@@ -37,16 +37,7 @@
     rel='stylesheet' type='text/css'>
   <link href="//fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" integrity="sha384-0s5Pv64cNZJieYFkXYOTId2HMA2Lfb6q2nAcx2n0RTLUnCAoTTsS0nKEO27XyKcY" crossorigin="anonymous"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js" integrity="sha384-ZoaMbDF+4LeFxg6WdScQ9nnR1QC2MIRxA1O9KWEXQwns1G8UNyIEZIQidzb0T1fo" crossorigin="anonymous"></script>
-        <link href="css/bootstrap2.css" type="text/css" rel="stylesheet" media="all">
-    <![endif]-->
 </head>
-
 <body>
   <!-- banner -->
   <div class="banner about-banner" style="background-image:url('img/2.jpg')">
@@ -61,7 +52,6 @@
                 </button>
             <a class="navbar-brand page-scroll" href="#page-top">Up To Train</a>
           </div>
-
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right" style="padding-top:0px;">
@@ -87,7 +77,6 @@
         </div>
         <!-- /.container-fluid -->
       </nav>
-
     </div>
     <!-- //header -->
     <div class="banner-text">
@@ -98,10 +87,7 @@
       </div>
     </div>
   </div>
-
-
   <div class="welcome about">
-
     <div class="container" align="center">
       <div class="row">
         <?php $__currentLoopData = $trip; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $trips): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -118,10 +104,7 @@
           <div class="col-md-3"></div>
           <div class="col-md-6">
             <ul class="list-inline">
-
-
               <?php
-                    
                     if($count == 0){
                         $sum = $triprounds->amount_seats;
                     }
@@ -129,14 +112,10 @@
                         $amount =  $triprounds->amount_seats;
                         $nbooking  = $bookings[0]->number_booking;
                         $sum = $amount-$nbooking;
-                    } 
-                        
+                    }      
                     ?>
-
-
                 <form>
                   รอบวันที่ <?php echo e($triprounds->start_date); ?> - <?php echo e($triprounds->departure_date); ?>
-
 
                   <br> จำนวนเด็ก
                   <input type="number" name="number_children" id="number_children" min="0" max=<?php echo e($sum); ?> value="0" onchange="myChildren()" onclick="mySummy()">                  ราคา :: <?php echo e($triprounds->price_child); ?> ยอดรวมเด็ก
@@ -145,19 +124,15 @@
                   <br> จำนวนผู้ใหญ่
                   <input type="number" name="number_adults" id="number_adults" min="0" max=<?php echo e($sum); ?> onchange="myAdult()" onclick="mySummy()">                  ราคา :: <?php echo e($triprounds->price_adult); ?> ยอดรวมผู้ใหญ่
                   <p id="padult"></p>
-
                   สถานะการจอง
                   <p id="summary"></p>
-
-                  ที่นั่งว่าง :: <?php echo e($sum); ?> /จำนวนที่นั้งทั้งหมด :: <?php echo e($triprounds->amount_seats); ?>
-
+                  ที่นั่งว่าง :: <?php echo e($sum); ?> /จำนวนที่นั่งทั้งหมด :: <?php echo e($triprounds->amount_seats); ?>
 
                 </form>
             </ul>
           </div>
           <div class="col-md-3"></div>
         </div>
-
         <a href="/bookingsum">
                 <button type="button" class="btn btn-primary" data-dismiss="modal" href=<?php echo e(url( '/bookingsum')); ?>>  <i class="fa fa-bookmark"></i> จองตอนนี้</button>
                 </a>
@@ -304,7 +279,10 @@
 
 
 
-  <script>
+  
+
+</body>
+<script>
     function myChildren() {
       var x = document.getElementById("number_children").value;
       var y = {
@@ -355,6 +333,4 @@
 
     }
   </script>
-
-
 </html>

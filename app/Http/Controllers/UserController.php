@@ -55,14 +55,4 @@ class UserController extends Controller
     function register(){
         return view('register');
     }
-
-    
-
-
-
-
-
-
-
-
 }

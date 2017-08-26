@@ -121,10 +121,8 @@
             <div class="col-lg-12 text-center">
                 <h2 class="section-heading">Highlight</h2>
                 <h3 class="section-subheading text-muted">ทริปท่องเที่ยวน่าสนใจอันดับต้น</h3>
-                <p>*This "function" to next sprint</p>
             </div>
         </div>
-        <br>
         <div class="row">
             <?php $__currentLoopData = $trips; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $t): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="col-md-4 col-sm-6 portfolio-item">
@@ -144,7 +142,6 @@
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
     </div>
-
 </section>
 <!--<section id="team" class="bg-light-gray">
         <div class="container">
