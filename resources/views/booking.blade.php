@@ -139,7 +139,7 @@
 
                             <br>
                                     จำนวนเด็ก 
-                   <input type ="number" name="number_children" id="number_children" min="0" max={{$sum}} onchange="myChildren()" onclick="mySummy()" >
+                   <input type ="number" name="number_children" id="number_children" min="0" max={{$sum}} value ="0"  onchange="myChildren()" onclick="mySummy()" >
                                     ราคา :: {{$triprounds->price_child}}
                                     ยอดรวมเด็ก<p id="pchild"></p>
                                     
@@ -147,7 +147,7 @@
                             
                             
                                    จำนวนผู้ใหญ่ 
-                                   <input type ="number" name="number_adults" id="number_adults"  min="0" max={{$sum}} onchange="myAdult()" onclick="mySummy()" >
+                                   <input type ="number" name="number_adults" id="number_adults"  min="0" max={{$sum}}  value ="0" onchange="myAdult()" onclick="mySummy()" >
                                     ราคา :: {{$triprounds->price_adult}}
                                     ยอดรวมผู้ใหญ่ <p id="padult"></p>
 
@@ -182,19 +182,19 @@ function myAdult() {
     document.getElementById("padult").innerHTML = "ราคารวมผู้ใหญ่ทั้งหมด"+ x*y;
 }
 function mySummy(){
-    var a = document.getElementById("number_children").value;
+    var a =document.getElementById("number_children").value;
     var b = document.getElementById("number_adults").value;
     var c = {{$triprounds->price_adult}};
     var d = {{$triprounds->price_child}};
     var nsum = (a*d)+(b*c);
     var e = {{$triprounds->amount_seats}};
     console.log(e);
-    var np = a+b; 
+    var np = parseInt(a)+parseInt(b); 
     if(np>e){
         document.getElementById("summary").innerHTML="กรุณากรอกจำนวนคนเกิน";
     }
     else{
-        document.getElementById("summary").innerHTML=" ราคารวมทั้งหมด"+nsum+"จำนวนคนทั้งหมด"+np+"OK";
+        document.getElementById("summary").innerHTML=" ราคารวมทั้งหมด"+nsum+"<br>"+"จำนวนคนทั้งหมด"+np+"<br>"+"OK";
     }
     
 }
