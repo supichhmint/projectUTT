@@ -14,7 +14,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-
+               
                 <li>
                     <a class="page-scroll" href="#services">How to Use</a>
                 </li>
@@ -95,19 +95,22 @@
                 <h3 class="section-subheading text-muted">" มองหาทริปอยู่ใช่ไหม? "</h3>
             </div>
         </div>
-        <!-- search Button -->
-        <div id="success"></div>
+        <br><br>
+        
 
-        <!--laravel-->
-        <a href="search"><button type="submit" class="btn btn-xl">Search Now!</button></a> <br><br>
-        <br>
-        <p>*This "search function" to next sprint</p>
+                <!-- search Button -->
+                <div id="success"></div>
 
-    </div>
+                <!--laravel-->
+                <a href="search"><button type="submit" class="btn btn-xl">Search Now!</button></a> <br><br>
+                <br>
+                <p>*This "search function" to next sprint</p>
+
+            </div>
 
 
 
-    </div>
+        </div>
     </div>
 </section>
 
@@ -189,7 +192,7 @@
             <div class="col-lg-12 text-center">
                 <h2 class="section-heading">Contact Us</h2>
                 <h3 class="section-subheading text-muted">ติดต่อพวกเราได้โดยกรอกแบบฟอร์มด้านล่าง แล้วพวกเราจะรีบตอบกลับอย่างเร่งด่วน *Next Sprint"</h3>
-
+                
             </div>
         </div>
         <div class="row">
