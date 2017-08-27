@@ -167,6 +167,7 @@
                         
                     </td>
                 </tr>
+                
                 <tr class="total">
                     <td>
                         จำนวนคนรวมทั้งหมด : {{$book->number_booking}} 
@@ -184,7 +185,7 @@
             <form name="checkoutForm" method="POST" action="/charge">
                 <input type="hidden" name="description" value="Product order " />
                 <input type="hidden" name="name" value="{{$user[0]->name}}"/>
-                 <input type="hidden"  name="amount" value="{{$book->total_cost}}"/>
+                 <input type="hidden"  name="amount" value="{{$book->total_cost *100}}"/>
                 {{ csrf_field() }}
 
     
@@ -195,7 +196,7 @@
                 data-button-label ="ซื้อเลยจ้า" 
                 data-submit-label="Submit" 
                 data-location="yes" 
-                data-amount="{{$book->total_cost}}"
+                data-amount="{{$book->total_cost * 100}}"
                 data-currency="thb"
                 >
                 </script>
@@ -203,9 +204,9 @@
     <!--the script will render <input type="hidden" name="omiseToken"> for you automatically-->
              </form>
              <script>
-                // var z = {{$book->total_cost}};
-                // document.getElementsByName("description").value = parsenInt(z)*100;
-                // document.getElementsByName("amount").value = parseInt(z)*100;
+                var z = {{$book->total_cost}};
+                 document.getElementsByName("description").value = parsenInt(z)*100;
+                 document.getElementsByName("amount").value = parseInt(z)*100;
                 // //console.log(z*100);
                 
              </script>

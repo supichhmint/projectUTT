@@ -97,13 +97,14 @@
           <div class="col-md-6">
             <ul class="list-inline">
               <?php
+
                     if($count == 0){
                         $sum = $triprounds->amount_seats;
                     }
                     else if($count > 0 ){
                         $amount =  $triprounds->amount_seats;
-                        $nbooking  = $booking[0]->number_booking;
-                        $sum = $amount-$nbooking;
+                        
+                        $sum = $amount-$sumbook;
                     }
                       $bookId = $triprounds->id;      
                     ?>

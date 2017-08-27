@@ -175,6 +175,7 @@
                         
                     </td>
                 </tr>
+                
                 <tr class="total">
                     <td>
                         จำนวนคนรวมทั้งหมด : <?php echo e($book->number_booking); ?> 
@@ -193,7 +194,7 @@
             <form name="checkoutForm" method="POST" action="/charge">
                 <input type="hidden" name="description" value="Product order " />
                 <input type="hidden" name="name" value="<?php echo e($user[0]->name); ?>"/>
-                 <input type="hidden"  name="amount" value="<?php echo e($book->total_cost); ?>"/>
+                 <input type="hidden"  name="amount" value="<?php echo e($book->total_cost *100); ?>"/>
                 <?php echo e(csrf_field()); ?>
 
 
@@ -205,7 +206,7 @@
                 data-button-label ="ซื้อเลยจ้า" 
                 data-submit-label="Submit" 
                 data-location="yes" 
-                data-amount="<?php echo e($book->total_cost); ?>"
+                data-amount="<?php echo e($book->total_cost * 100); ?>"
                 data-currency="thb"
                 >
                 </script>
@@ -213,9 +214,9 @@
     <!--the script will render <input type="hidden" name="omiseToken"> for you automatically-->
              </form>
              <script>
-                // var z = <?php echo e($book->total_cost); ?>;
-                // document.getElementsByName("description").value = parsenInt(z)*100;
-                // document.getElementsByName("amount").value = parseInt(z)*100;
+                var z = <?php echo e($book->total_cost); ?>;
+                 document.getElementsByName("description").value = parsenInt(z)*100;
+                 document.getElementsByName("amount").value = parseInt(z)*100;
                 // //console.log(z*100);
                 
              </script>
