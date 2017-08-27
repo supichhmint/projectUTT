@@ -132,6 +132,7 @@
                   ราคารวมทั้งหมด :
                   <!-- <p id="total_cost" name="total_cost" ></p> -->
                    <input type="number" name="total_cost" id="total_cost" >
+                    
                    <button type="submit" class="btn btn-primary">จองตอนนี้</button>
                 </form>
             </ul>

@@ -99,6 +99,7 @@ Route::post ( '/searcht', function () {
 
 Route::get('/booking/{id}','UserController@booking');
 Route::post('/bookingsum','OmiseController@bookingstore');
+Route::get('/bookingsum','OmiseController@bookingsum');
 Route::get('/charge', function () {
 	return view ('omisecard');
 });
@@ -111,7 +112,4 @@ Route::get('/test', function () {
 	return view ('1test');
 });
 Route::post('/test','OmiseController@checkout');
-Route::get('/bookingsum', function () {
-	return view ('bookingsum');
-});
 

@@ -91,7 +91,8 @@
                                 </td>
 
                                 <td>
-                                    ใบรายการที่ #: 123<br> วันที่ : 20/05/2017<br> เวลา : 20.00
+                                    ใบรายการที่ #: 123<br> วันที่ :<?php echo e($book->booking_time); ?>
+
                                 </td>
                             </tr>
                         </table>
@@ -102,13 +103,16 @@
                     <td colspan="2">
                         <table>
                             <tr>
-                                <td>
-                                    เที่ยวละไมไทยแลนด์เวิร์ด จำกัด<br> 555 ถ.พระรามที่สอง ซอย 55<br> แขวง แสมดำ เขต บางขุนเทียน<br>                                    กรุงเทพ 10150
-                                </td>
 
                                 <td>
-                                    สมชาย<br> รักชาติไทย
-                                    <br> somchai@example.com
+                                   <?php echo e($user[0]->name); ?>
+
+                                </td>
+                                </tr>
+                                <tr>
+                                <td>
+                                    <?php echo e($user[0]->email); ?>
+
                                 </td>
                             </tr>
                         </table>
@@ -127,11 +131,13 @@
 
                 <tr class="details">
                     <td>
-                        เที่ยวกาญจนบุรี (4 วัน 3 คืน)
+                       <?php echo e($trip[0]->trips_name); ?> (<?php echo e($trip[0]->trip_nday); ?> วัน <?php echo e($trip[0]->trip_nnight); ?> คืน)
                     </td>
 
                     <td>
-                        15/04/18
+                        <?php echo e($tripround[0]->start_date); ?> ถึง <br>
+                        <?php echo e($tripround[0]->departure_date); ?>
+
                     </td>
                 </tr>
 
@@ -147,28 +153,36 @@
 
                 <tr class="item">
                     <td>
-                        ผู้ใหญ่ (จำนวน 1 คน)
+                        จำนวนผู้ใหญ่ :<?php echo e($book->number_adults); ?>
+
                     </td>
 
                     <td>
-                        300 บาท
+                       <?php echo e($book->number_adults); ?> X <?php echo e($tripround[0]->price_adult); ?>
+
                     </td>
                 </tr>
 
                 <tr class="item">
                     <td>
-                        เด็ก (จำนวน 1 คน)
+                        จำนวนเด็ก : <?php echo e($book->number_children); ?>
+
                     </td>
 
                     <td>
-                        100 บาท
+                        <?php echo e($book->number_children); ?> X <?php echo e($tripround[0]->price_child); ?>
+
+                        
                     </td>
                 </tr>
                 <tr class="total">
-                    <td></td>
+                    <td>
+                        จำนวนคนรวมทั้งหมด : <?php echo e($book->number_booking); ?> 
+                    </td>
 
                     <td>
-                        ราคารวม: 400 บาท
+                        ราคารวม: <?php echo e($book->total_cost); ?>
+
                     </td>
                 </tr>
 
@@ -180,8 +194,10 @@
                 <input type="hidden" name="description" value="Product order ฿3200.00" /> <?php echo e(csrf_field()); ?>
 
 
-                <script type="text/javascript" src="https://cdn.omise.co/card.js" data-key="pkey_test_58x5lew98sd34rjio0a" data-image="http://www.mx7.com/view2/A2ElRcLZ5FAr6dEv"
-                    data-frame-label="UP to Train" data-button-label="ซื้อเลยจ้า" data-submit-label="Submit" data-location="yes"
+                <script type="text/javascript" src="https://cdn.omise.co/card.js" data-key="pkey_test_58x5lew98sd34rjio0a" 
+                data-image="http://www.mx7.com/view2/A2ElRcLZ5FAr6dEv"
+                    data-frame-label="UP to Train" 
+                    data-button-label="ซื้อเลยจ้า" data-submit-label="Submit" data-location="yes"
                     data-amount="320000" data-currency="thb">
                 </script>
                 <!--the script will render <input type="hidden" name="omiseToken"> for you automatically-->

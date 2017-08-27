@@ -5,6 +5,8 @@ use DB;
 use Illuminate\Http\Request;
 use App\trip;
 use App\schedules;
+use App\booking;
+
 
 use App\Http\Controllers\Omise\lib\Omise;
 require_once dirname(__FILE__).'/omise/lib/Omise.php';
@@ -148,12 +150,34 @@ class OmiseController extends Controller
                 "number_children" => $request->input('number_children'),
                 "number_booking" =>$request->input('number_booking'),
                 "total_cost"=>$request->input('total_cost'),
-                "tripround_id"=>$request->input('book_id')
+                "tripround_id"=>$request->input('book_id'),
+                "user_id"=>$request->input("user_id",'1')
             ]);
-            //$b = DB::table('booking')->where('id', DB::raw("(select max('id') from booking)"))->get();
-            //$bookId = DB::table('booking')->where('id',$b )->first()->id;
             return redirect('/bookingsum');
     }
+    public function bookingsum()
+    {
+        $booking = DB::table('booking')->get();
+        $mbook =$booking->max('id');
+        $book = DB::table('booking')->where('id',$mbook)->first();
+        $nu = DB::table('booking')->select('tripround_id')->where('id',$mbook)->pluck('tripround_id');
+        $u= DB::table('booking')->select('user_id')->where('id',$mbook)->pluck('user_id');
+        $triprounds = DB::table('triprounds')->where('id',$nu)->get();
+        $tr = DB::table('triprounds')->select('trip_id')->where('id',$nu)->pluck('trip_id');
+        $user = DB::table('users')->where('id',$u)->get();
+        $trip = DB::table('trips')->where('id',$tr)->get();
+        $data = array(
+            'booking' => $booking,
+            'mbook' =>$mbook,
+            'book' =>$book,
+            'tripround' =>$triprounds,
+            'user' => $user,
+            'trip'=>$trip
+        );
+        return view('bookingsum', $data);
+    }
+    
+
     
     
 

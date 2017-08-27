@@ -72,6 +72,7 @@ class showtripController extends Controller
     $priceAdult = $request->input('price_adult');
     $amountSeat = $request->input('amount_seats');
 
+    
     $rounds = Array();
     for($i=0;$i<sizeOf($startDate);$i++){
         $data = array($startDate[$i], $departureDate[$i], $priceChild[$i], $priceAdult[$i], $amountSeat[$i]);

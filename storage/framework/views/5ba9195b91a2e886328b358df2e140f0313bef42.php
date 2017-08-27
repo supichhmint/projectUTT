@@ -1,4 +1,4 @@
-@extends('layouts.headuser') @section('title', 'Summary Booking') @section('content')
+ <?php $__env->startSection('title', 'Summary Booking'); ?> <?php $__env->startSection('content'); ?>
 <style>
     .invoice-box {
         max-width: 800px;
@@ -64,7 +64,7 @@
         font-weight: bold;
     }
 
-    @media only screen and (max-width: 600px) {
+    @media  only screen and (max-width: 600px) {
         .invoice-box table tr.top table td {
             width: 100%;
             display: block;
@@ -91,7 +91,7 @@
                                 </td>
 
                                 <td>
-                                    ใบรายการที่ #: 123<br> วันที่ :{{$book->booking_time}}
+                                    ใบรายการที่ #: 123<br> วันที่ :
                                 </td>
                             </tr>
                         </table>
@@ -102,14 +102,13 @@
                     <td colspan="2">
                         <table>
                             <tr>
+                                <td>
+                                    เที่ยวละไมไทยแลนด์เวิร์ด จำกัด<br> 555 ถ.พระรามที่สอง ซอย 55<br> แขวง แสมดำ เขต บางขุนเทียน<br>                                    กรุงเทพ 10150
+                                </td>
 
                                 <td>
-                                   {{$user[0]->name}}
-                                </td>
-                                </tr>
-                                <tr>
-                                <td>
-                                    {{$user[0]->email}}
+                                    สมชาย<br> รักชาติไทย
+                                    <br> somchai@example.com
                                 </td>
                             </tr>
                         </table>
@@ -128,12 +127,11 @@
 
                 <tr class="details">
                     <td>
-                       {{$trip[0]->trips_name}} ({{$trip[0]->trip_nday}} วัน {{$trip[0]->trip_nnight}} คืน)
+                        เที่ยวกาญจนบุรี (4 วัน 3 คืน)
                     </td>
 
                     <td>
-                        {{$tripround[0]->start_date}} ถึง <br>
-                        {{$tripround[0]->departure_date}}
+                        15/04/18
                     </td>
                 </tr>
 
@@ -149,31 +147,28 @@
 
                 <tr class="item">
                     <td>
-                        จำนวนผู้ใหญ่ :{{$book->number_adults }}
+                        ผู้ใหญ่ (จำนวน 1 คน)
                     </td>
 
                     <td>
-                       {{$book->number_adults }} X {{$tripround[0]->price_adult }}
+                        300 บาท
                     </td>
                 </tr>
 
                 <tr class="item">
                     <td>
-                        จำนวนเด็ก : {{$book->number_children }}
+                        เด็ก (จำนวน 1 คน)
                     </td>
 
                     <td>
-                        {{$book->number_children }} X {{$tripround[0]->price_child }}
-                        
+                        100 บาท
                     </td>
                 </tr>
                 <tr class="total">
-                    <td>
-                        จำนวนคนรวมทั้งหมด : {{$book->number_booking}} 
-                    </td>
+                    <td></td>
 
                     <td>
-                        ราคารวม: {{$book->total_cost}}
+                        ราคารวม: 400 บาท
                     </td>
                 </tr>
 
@@ -182,7 +177,8 @@
         </div><br><br>
         <div style='text-align:center'>
             <form name="checkoutForm" method="POST" action="/card">
-                <input type="hidden" name="description" value="Product order ฿3200.00" /> {{ csrf_field() }}
+                <input type="hidden" name="description" value="Product order ฿3200.00" /> <?php echo e(csrf_field()); ?>
+
 
                 <script type="text/javascript" src="https://cdn.omise.co/card.js" data-key="pkey_test_58x5lew98sd34rjio0a" 
                 data-image="http://www.mx7.com/view2/A2ElRcLZ5FAr6dEv"
@@ -195,4 +191,5 @@
         </div>
     </div>
 </div>
-@endsection('content')
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.headuser', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
