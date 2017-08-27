@@ -190,18 +190,35 @@
 
         </div><br><br>
         <div style='text-align:center'>
-            <form name="checkoutForm" method="POST" action="/card">
-                <input type="hidden" name="description" value="Product order ฿3200.00" /> <?php echo e(csrf_field()); ?>
+            <form name="checkoutForm" method="POST" action="/charge">
+                <input type="hidden" name="description" value="Product order " />
+                <input type="hidden" name="name" value="<?php echo e($user[0]->name); ?>"/>
+                 <input type="hidden"  name="amount" value="<?php echo e($book->total_cost); ?>"/>
+                <?php echo e(csrf_field()); ?>
 
 
-                <script type="text/javascript" src="https://cdn.omise.co/card.js" data-key="pkey_test_58x5lew98sd34rjio0a" 
+    
+                <script type="text/javascript"  src="https://cdn.omise.co/card.js"               
+                data-key="pkey_test_58x5lew98sd34rjio0a"
                 data-image="http://www.mx7.com/view2/A2ElRcLZ5FAr6dEv"
-                    data-frame-label="UP to Train" 
-                    data-button-label="ซื้อเลยจ้า" data-submit-label="Submit" data-location="yes"
-                    data-amount="320000" data-currency="thb">
+                data-frame-label="UP to Train" 
+                data-button-label ="ซื้อเลยจ้า" 
+                data-submit-label="Submit" 
+                data-location="yes" 
+                data-amount="<?php echo e($book->total_cost); ?>"
+                data-currency="thb"
+                >
                 </script>
-                <!--the script will render <input type="hidden" name="omiseToken"> for you automatically-->
-            </form>
+    
+    <!--the script will render <input type="hidden" name="omiseToken"> for you automatically-->
+             </form>
+             <script>
+                // var z = <?php echo e($book->total_cost); ?>;
+                // document.getElementsByName("description").value = parsenInt(z)*100;
+                // document.getElementsByName("amount").value = parseInt(z)*100;
+                // //console.log(z*100);
+                
+             </script>
         </div>
     </div>
 </div>

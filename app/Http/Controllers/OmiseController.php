@@ -6,9 +6,10 @@ use Illuminate\Http\Request;
 use App\trip;
 use App\schedules;
 use App\booking;
-
-
+use App\Payment;
 use App\Http\Controllers\Omise\lib\Omise;
+
+
 require_once dirname(__FILE__).'/omise/lib/Omise.php';
 
 define('OMISE_PUBLIC_KEY', 'pkey_test_58x5lew98sd34rjio0a');
@@ -26,29 +27,11 @@ class OmiseController extends Controller
         $trips = DB::table('trips')
         ->orderBy('id', 'desc')
         ->get();
-   
-        // ->join('triprounds','triprounds.trip_id','=','trips.id')
-        // ->join('travelagency','travelagency.id','=','trips.travelagency_id')
-        // ->join('stations',function ($join){
-        //     $join->on('trips.source_id','=','stations.id')
-        //     ->orOn('trips.destination_id','=','stations.id'); 
-
-        // })
-        // $trips->distinct('trips_name');
-        //->selete(DB::)
-        //รัก
-        //$trip as $trip
-        
-        // ->get();
-        //se
-
         return view('tripuser',['trips'=>$trips]);
     }
     
     function schedule($id){
-        //$tripr = DB::table('triprounds')-get();
-        //return view("schedule",['tripr'=>$tripr]);
-        //return view('schedule');
+        
         $schedules = schedules::where('trip_id',$id)->get();
         $data = array(
             'schedules' => $schedules,
@@ -68,15 +51,15 @@ class OmiseController extends Controller
     }
 
 
-    function checkout(){
-    
+    function checkout(Request $request){
+        $name = $request->input('name');
+        $amount = $request->input('amount');
         $charge = \OmiseCharge::create(array(
-            'amount' => 320000,
+            'amount' => $amount,
             'currency' => 'thb',
-            'card' => $_POST['omiseToken']
-          
+            'card' => $_POST['omiseToken'],
+            'metadata' => ['name' => $name]
           ));
-
           echo '<pre>';
           print_r($_POST);
           echo '</pre>';
@@ -86,7 +69,6 @@ class OmiseController extends Controller
           echo '<pre>';
           print_r($charge);
           echo '</pre>';
-
      }
 
 
@@ -114,33 +96,23 @@ class OmiseController extends Controller
     }
 
 
-     function webhook(Request $request){
+    function webhook(Request $request){
         $payload = $request->json()->all();
-        if($payload['key'] === 'charge.complete'){
-            if($payload['data']['paid']){ //ถ้าจ่ายสำเร็จ
-                //ส่ง SMS
-                $tel = $payload['data']['metadata']['tel'];
-                $tel = preg_replace('/^0/', '66', $tel);
-                $name = $payload['data']['metadata']['name'];
-                $sname = $payload['data']['metadata']['sname'];
-                $amount = $payload['data']['amount'];
-                $amount = substr($amount, 0, strlen($amount)-2).'.'.substr($amount, -2);
-                Nexmo::message()->send([
-                    'to' => $tel,
-                    'from' => 'NEXMO',
-                    'text' => 'ขอขอบคุณ '.$name.' '.$sname.' ที่บริจาคเงินจำนวน '.$amount.' บาท ให้แก่ ANIMAL-AID',
-                    'type' => 'unicode'
-                ]);
-                return Response::json([
-                    'statusCode' => 200,
-                    'statusMessage' => 'Success',
-                    'payload' => $amount
-                    ], 200);
-
-            }else{ //ถ้าจ่ายไม่สำเร็จ
-
-            }
+        if($payload['key'] === 'charge.create'){ //event credit charge
+            $amount = $payload['data']['amount'];
+            $status = $payload['data']['paid'];
+            $name = $payload['data']['metadata']['name'];
         }
+        $payment = new Payment;
+        $payment->name = $name;
+        $payment->amount = $amount;
+        $payment->status = $status;
+        $payment->save();
+        return Response::json([
+            'statusCode' => 200,
+            'statusMessage' => 'success add record',
+            'data' => $payment
+        ], 200);
     }
     public function bookingstore(Request $request)
     {
