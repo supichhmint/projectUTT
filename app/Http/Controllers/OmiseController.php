@@ -5,6 +5,7 @@ use DB;
 use Illuminate\Http\Request;
 use App\trip;
 use App\schedules;
+
 use App\Http\Controllers\Omise\lib\Omise;
 require_once dirname(__FILE__).'/omise/lib/Omise.php';
 
@@ -138,6 +139,20 @@ class OmiseController extends Controller
 
             }
         }
+    }
+    public function bookingstore(Request $request)
+    {
+        DB::table('booking')
+        ->insertGetId([ 
+                "number_adults" =>$request->input('number_adults'),
+                "number_children" => $request->input('number_children'),
+                "number_booking" =>$request->input('number_booking'),
+                "total_cost"=>$request->input('total_cost'),
+                "tripround_id"=>$request->input('book_id')
+            ]);
+            //$b = DB::table('booking')->where('id', DB::raw("(select max('id') from booking)"))->get();
+            //$bookId = DB::table('booking')->where('id',$b )->first()->id;
+            return redirect('/bookingsum');
     }
     
     

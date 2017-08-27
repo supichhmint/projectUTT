@@ -32,15 +32,19 @@
             <div class="new-product">
                 <div id="cbp-vm" class="cbp-vm-switcher cbp-vm-view-list">
                     <div class="pages">
-                     <h4><?php 
-                     use Carbon\Carbon;
-                     $dt     = Carbon::now();
-                     echo $dt->subDays(10)->diffForHumans();  ?>
+                     <h4>
+                     
                      </h4>
                         <h4><?php echo e($trips->count()); ?> total trips</h4>
                     </div>
                     <div class="clearfix"></div>
                     <ul>
+                    <?php 
+                     use Carbon\Carbon;
+                     $currentnow     = Carbon::now();
+                     //$tripround = $triprounds->start_date;
+                     echo $currentnow  ;
+                     ?>
                         <?php $__currentLoopData = $trips; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tripuser): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <li>
                             <div class="simpleCart_shelfItem">
@@ -65,6 +69,7 @@
                                             $tripagent = DB::table('travelagency')->where('id', $tripuser->travelagency_id)->first();
                                             
                                             $tripround = DB::table('triprounds')->where('trip_id', $tripuser->id)->get();
+                                            
                                             ?>
                                                     <tr style="align:center;font-size:1.3em;">
                                                         <th>รอบการเดินทาง</th>
